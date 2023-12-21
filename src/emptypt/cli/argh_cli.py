@@ -35,7 +35,11 @@ def populate_parser_descriptions(parser: ArgumentParser, struct: Callable) -> No
                 # If the type is unannotated no meta so no description
                 hint = stringify_hint(hints[flag])
                 desc = ""
-            action.help = f"{desc}(type: {hint}, default: {action.help})"
+            match action.default:
+                case msgspec._core.Factory() as factory_manager:
+                    # The msgspec default factory didn't get instantiated by argh
+                    action.default = factory_manager.factory()
+            action.help = f"{desc}(type: {hint}, default: {action.default})"
 
 
 def dispatch_command(cmd: Callable, **argh_kwargs):
@@ -57,11 +61,6 @@ def dispatch_command(cmd: Callable, **argh_kwargs):
         _, namespace = argh.parse_and_resolve(parser=parser, **argh_kwargs)
     ns_kwargs = vars(namespace)
     ns_kwargs.pop("_functions_stack")
-    for flag, set_value in ns_kwargs.items():
-        match set_value:
-            case msgspec._core.Factory() as factory_manager:
-                # The factory must be instantiated directly
-                ns_kwargs[flag] = factory_manager.factory()
     return cmd(**ns_kwargs)
 
 
