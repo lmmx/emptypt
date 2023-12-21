@@ -2,7 +2,7 @@ from sys import stderr
 from textwrap import indent
 
 import click
-from msgspec import Struct, ValidationError
+from msgspec import ValidationError
 
 from ..core.action import foo
 from ..core.error_handlers import CaptureInvalidConfigExit

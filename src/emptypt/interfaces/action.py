@@ -1,30 +1,20 @@
-from msgspec import Struct
+from typing import Annotated
 
-# from .debug import DebugConfig
-# from .display import DisplayConfig
+from msgspec import Meta, Struct
 
 __all__ = ("ActionConfig",)
 
 
-# class FilterConfig(Struct):
-#     filter_arg1: bool = False
-#
-#
-# class IOConfig(Struct):
-#     io_arg1: bool = False
+def field(typ, description: str):
+    """Annotate a `msgspec.Struct` field with a description"""
+    return Annotated[typ, Meta(description=description)]
 
 
 class ActionConfig(Struct):
-    """
-    Configure input filtering and output display.
+    """Configure input filtering and output display."""
 
-      :param io_arg1: The first IO configuration entry.
-      :param filter_arg1: The first filtering configuration entry.
-      :param quiet: Whether to suppress console output.
-      :param debug: Whether to run debug diagnostics.
-    """
-
-    io_arg1: bool = False
-    filter_arg1: bool = False
-    quiet: bool = False
-    debug: bool = False
+    io_arg1: field(bool, "Example IO flag") = False
+    filter_arg1: field(bool, "Example filter flag") = False
+    quiet: field(bool, "Run silently") = False
+    debug: field(bool, "Run debug diagnostics") = False
+    undocumented: bool = False

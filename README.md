@@ -6,12 +6,12 @@ Template for an entrypoint CLI using msgspec
 
 | Configuration        | Execution Time | entrypoint       | Autogenerate from config  |
 |----------------------|----------------|------------------|---------------------------|
-| Stdlib (baseline)    | 0.015s         | emptypt-minimum  | -                         |
-| msgspec              | 0.034s         | emptypt-simple   | -                         |
-| msgspec + argh       | 0.048s         | emptypt-argh     | Yes                       |
-| msgspec + click      | 0.074s         | emptypt-click    | No                        |
+| Stdlib (baseline)    | 0.019s         | emptypt-minimum  | -                         |
+| msgspec              | 0.046s         | emptypt-simple   | -                         |
+| msgspec + argh       | 0.060s         | emptypt-argh     | Yes                       |
+| msgspec + click      | 0.075s         | emptypt-click    | No                        |
 | msgspec + typer      | 0.094s         | emptypt-typer    | No                        |
-| msgspec + defopt     | 0.160s         | emptypt-defopt   | Yes                       |
+| msgspec + defopt     | 0.175s         | emptypt-defopt   | Yes                       |
 
 ## Details
 
