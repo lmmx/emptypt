@@ -3,17 +3,18 @@ from types import TracebackType
 
 from .errors import EntryptMisconfigurationExit
 
-__all__ = "CaptureInvalidConfigExit"
+__all__ = ("CaptureInvalidConfigExit",)
 
 
 class CaptureInvalidConfigExit(AbstractContextManager):
     def __exit__(
         self,
-        __exc_type: type[SystemExit] | None,
-        __exc_value: SystemExit | None,
-        __traceback: TracebackType | None,
+        exc_type: type[SystemExit] | None,
+        exc_value: SystemExit | None,
+        traceback: TracebackType | None,
     ) -> bool | None:
-        if __exc_type is SystemExit:
-            raise FugitMisconfigurationExit()
+        if exc_type is SystemExit and exc_value.code != 0:
+            raise EntryptMisconfigurationExit()
         else:
-            return super().__exit__(__exc_type, __exc_value, __traceback)
+            # Do not intercept if CLI was passed `-h`
+            return super().__exit__(exc_type, exc_value, traceback)

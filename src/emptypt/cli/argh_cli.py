@@ -4,6 +4,7 @@ from typing import Callable
 import argh
 
 from ..core.action import foo
+from ..core.error_handlers import CaptureInvalidConfigExit
 from ..core.errors import EntryptMisconfigurationExit
 from ..interfaces import ActionConfig
 
@@ -38,13 +39,8 @@ def dispatch_command(cmd: Callable, **argh_kwargs):
     parser = ArgumentParser()
     argh.set_default_command(parser, cmd)
     populate_parser_descriptions(parser, cmd)
-    try:
+    with CaptureInvalidConfigExit():
         _, namespace = argh.parse_and_resolve(parser=parser, **argh_kwargs)
-    except SystemExit as exc:
-        if exc.code != 0:
-            raise EntryptMisconfigurationExit()
-        else:
-            raise  # Do not intercept if passed `-h`
     ns_kwargs = vars(namespace)
     ns_kwargs.pop("_functions_stack")
     return cmd(**ns_kwargs)
