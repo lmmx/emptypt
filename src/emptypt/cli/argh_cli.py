@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 from typing import Annotated, Callable, get_args, get_origin, get_type_hints
 
 import argh
+import msgspec
 
 from ..core.action import foo
 from ..core.error_handlers import CaptureInvalidConfigExit
@@ -56,6 +57,11 @@ def dispatch_command(cmd: Callable, **argh_kwargs):
         _, namespace = argh.parse_and_resolve(parser=parser, **argh_kwargs)
     ns_kwargs = vars(namespace)
     ns_kwargs.pop("_functions_stack")
+    for flag, set_value in ns_kwargs.items():
+        match set_value:
+            case msgspec._core.Factory() as factory_manager:
+                # The factory must be instantiated directly
+                ns_kwargs[flag] = factory_manager.factory()
     return cmd(**ns_kwargs)
 
 
