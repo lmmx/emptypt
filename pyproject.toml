@@ -19,6 +19,7 @@ classifiers = [
 dependencies = [
     "msgspec>=0.18.5",
     "defopt>=6.4.0",
+    "argh>=0.30.4",
 ]
 description = "Git diff handling in Python."
 dynamic = ["version"]
@@ -35,7 +36,8 @@ requires-python = ">=3.11,<3.12"
 [project.scripts]
 emptypt-minimum = "emptypt.core.minimal_op:bar"
 emptypt-simple = "emptypt.core.action:foo"
-emptypt-defopt = "emptypt.cli.msgspec_cli:run_cli"
+emptypt-defopt = "emptypt.cli.defopt_cli:run_cli"
+emptypt-argh = "emptypt.cli.argh_cli:run_cli"
 
 [project.urls]
 Homepage = "https://github.com/lmmx/emptypt"

@@ -5,7 +5,18 @@
 groups = ["default", "develop", "docs", "mkdocs", "test"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:a4fd51434565bf3c24ce88764ff418c70b612dc0fba77fa96749bee33e4ceaa5"
+content_hash = "sha256:a1f296a3139c9ab225217d6dd9e59183e6e8a82975e5c8400969b2b698c31a6a"
+
+[[package]]
+name = "argh"
+version = "0.30.4"
+requires_python = ">=3.8"
+summary = "An unobtrusive argparse wrapper with natural syntax"
+groups = ["default"]
+files = [
+    {file = "argh-0.30.4-py3-none-any.whl", hash = "sha256:f38842b38a2a451b58ff7515bc370764f074ce56f613ddda71001a8b971d199a"},
+    {file = "argh-0.30.4.tar.gz", hash = "sha256:9fca8e69c4dad4f8d2a7bdfbdd80b0754462b53510a03e1b5cf2b43a87e6e960"},
+]
 
 [[package]]
 name = "babel"
