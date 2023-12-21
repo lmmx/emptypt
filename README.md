@@ -20,3 +20,21 @@ Template for an entrypoint CLI using msgspec
 - `typer.run` exits early and the decorator didn't get invoked in the entrypoint (fail)
 - `defopt.run` autogenerates nice CLIs from Pydantic models but the ones for msgspec Structs
   interpret all fields as positional CLI args by default
+
+## Example usage
+
+The `argh` CLI reads flag type hints and descriptions from `msgspec.Struct` field metadata.
+
+```
+usage: emptypt-argh [-h] [-i] [-f] [-q] [-d] [-u]
+
+Configure input filtering and output display.
+
+options:
+  -h, --help          show this help message and exit
+  -i, --io-arg1       Example IO flag (type: bool, default: False)
+  -f, --filter-arg1   Example filter flag (type: bool, default: False)
+  -q, --quiet         Run silently (type: bool, default: False)
+  -d, --debug         Run debug diagnostics (type: bool, default: False)
+  -u, --undocumented  (type: bool, default: False)
+```
