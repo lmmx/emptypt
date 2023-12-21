@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from argparse import ArgumentParser
-from typing import Callable
+from typing import Annotated, Callable, get_args, get_origin, get_type_hints
 
 import argh
 
@@ -11,17 +13,28 @@ from ..interfaces import ActionConfig
 __all__ = ("run_cli",)
 
 
+def stringify_hint(type_hint) -> str:
+    match type_hint:
+        case type():
+            hint = type_hint.__name__
+        case _:
+            hint = str(type_hint)
+    return hint
+
+
 def populate_parser_descriptions(parser: ArgumentParser, struct: Callable) -> None:
+    hints = get_type_hints(struct, include_extras=True)
     for action in parser._actions:
         if (flag := action.dest) in struct.__struct_fields__:
-            annotation = struct.__annotations__[flag]
-            try:
-                hint = annotation.__args__[0].__name__
-                desc = annotation.__metadata__[0].description
-                action.help = f"{desc} (type: {hint}, default: {action.help})"
-            except AttributeError:
-                hint = annotation.__name__
-                action.help = f"(type: {hint}, default: {action.help})"
+            if get_origin(hints[flag]) is Annotated:
+                type_hint, meta = get_args(hints[flag])
+                hint = stringify_hint(type_hint)
+                desc = meta.description + " "
+            else:
+                # If the type is unannotated no meta so no description
+                hint = stringify_hint(hints[flag])
+                desc = ""
+            action.help = f"{desc}(type: {hint}, default: {action.help})"
 
 
 def dispatch_command(cmd: Callable, **argh_kwargs):
