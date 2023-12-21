@@ -26,3 +26,5 @@ class ActionConfig(Struct):
 
     io_arg1: bool = False
     filter_arg1: bool = False
+    quiet: bool = False
+    debug: bool = False
