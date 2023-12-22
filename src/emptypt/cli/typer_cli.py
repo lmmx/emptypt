@@ -5,7 +5,7 @@ import typer
 from msgspec import ValidationError
 
 from ..core.action import foo
-from ..interfaces import ActionConfig
+from ..interfaces.action import ActionConfig
 
 __all__ = ("run_cli",)
 
