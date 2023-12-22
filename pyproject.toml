@@ -40,6 +40,7 @@ emptypt-minimum = "emptypt.core.minimal_op:bar"
 emptypt-simple = "emptypt.core.action:foo"
 emptypt-defopt = "emptypt.cli.defopt_cli:run_cli"
 emptypt-argh = "emptypt.cli.argh_cli:run_cli"
+emptypt-argh-docstr = "emptypt.cli.argh_ds_cli:run_cli"
 emptypt-click = "emptypt.cli.click_cli:run_cli"
 emptypt-typer = "emptypt.cli.typer_cli:run_cli"
 

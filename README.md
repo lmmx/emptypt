@@ -6,25 +6,25 @@ Template for an entrypoint CLI using msgspec
 
 Desktop
 
-| Configuration        | Execution Time | entrypoint       | Autogenerate from config  |
-|----------------------|----------------|------------------|---------------------------|
-| Stdlib (baseline)    | 0.019s         | emptypt-minimum  | -                         |
-| msgspec              | 0.046s         | emptypt-simple   | -                         |
-| msgspec + argh       | 0.060s         | emptypt-argh     | Yes                       |
-| msgspec + click      | 0.075s         | emptypt-click    | No                        |
-| msgspec + typer      | 0.094s         | emptypt-typer    | No                        |
-| msgspec + defopt     | 0.175s         | emptypt-defopt   | Yes                       |
+| Configuration               | Execution Time | entrypoint       | Autogenerate from config  |
+|-----------------------------|----------------|------------------|---------------------------|
+| Stdlib [baseline]           | 0.019s         | emptypt-minimum  | -                         |
+| msgspec                     | 0.046s         | emptypt-simple   | -                         |
+| msgspec + argh (docstring)  | 0.060s         | emptypt-argh     | Yes                       |
+| msgspec + click             | 0.075s         | emptypt-click    | No                        |
+| msgspec + typer             | 0.094s         | emptypt-typer    | No                        |
+| msgspec + defopt            | 0.175s         | emptypt-defopt   | Yes                       |
 
 Laptop (1.1 GHz)
 
-| Configuration        | Execution Time | entrypoint       | Autogenerate from config  |
-|----------------------|----------------|------------------|---------------------------|
-| Stdlib (baseline)    | 0.038s         | emptypt-minimum  | -                         |
-| msgspec              | 0.110s         | emptypt-simple   | -                         |
-| msgspec + argh       | 0.145s         | emptypt-argh     | Yes                       |
-| msgspec + click      | 0.180s         | emptypt-click    | No                        |
-| msgspec + typer      | 0.235s         | emptypt-typer    | No                        |
-| msgspec + defopt     | 0.440s         | emptypt-defopt   | Yes                       |
+| Configuration               | Execution Time | entrypoint       | Autogenerate from config  |
+|-----------------------------|----------------|------------------|---------------------------|
+| Stdlib [baseline]           | 0.038s         | emptypt-minimum  | -                         |
+| msgspec                     | 0.110s         | emptypt-simple   | -                         |
+| msgspec + argh (docstring)  | 0.145s         | emptypt-argh     | Yes                       |
+| msgspec + click             | 0.180s         | emptypt-click    | No                        |
+| msgspec + typer             | 0.235s         | emptypt-typer    | No                        |
+| msgspec + defopt            | 0.440s         | emptypt-defopt   | Yes                       |
 
 ## Details
 
@@ -49,5 +49,24 @@ options:
   -f, --filter-arg1   Example filter flag (type: bool, default: False)
   -q, --quiet         Run silently (type: bool, default: False)
   -d, --debug         Run debug diagnostics (type: bool, default: False)
+  -u, --undocumented  (type: bool, default: False)
+```
+
+The 2nd `argh` CLI (docstring variant) handles field descriptions from the class docstring, like defopt.
+This is a more scalable way to write field descriptions.
+
+```
+usage: emptypt-argh-docstr [-h] [-i] [-f] [-q] [-d] [-u]
+
+Configure input filtering and output display.
+
+options:
+  -h, --help          show this help message and exit
+  -i, --io-arg1       Example IO flag with a description that can go on and
+                      become split over multiple lines in the docstring.(type:
+                      bool, default: False)
+  -f, --filter-arg1   Example filter flag(type: bool, default: False)
+  -q, --quiet         Run silently(type: bool, default: False)
+  -d, --debug         Run debug diagnostics(type: bool, default: False)
   -u, --undocumented  (type: bool, default: False)
 ```
