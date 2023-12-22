@@ -63,10 +63,10 @@ Configure input filtering and output display.
 options:
   -h, --help          show this help message and exit
   -i, --io-arg1       Example IO flag with a description that can go on and
-                      become split over multiple lines in the docstring.(type:
-                      bool, default: False)
-  -f, --filter-arg1   Example filter flag(type: bool, default: False)
-  -q, --quiet         Run silently(type: bool, default: False)
-  -d, --debug         Run debug diagnostics(type: bool, default: False)
+                      become split over multiple lines in the docstring.
+                      (type: bool, default: False)
+  -f, --filter-arg1   Example filter flag (type: bool, default: False)
+  -q, --quiet         Run silently (type: bool, default: False)
+  -d, --debug         Run debug diagnostics (type: bool, default: False)
   -u, --undocumented  (type: bool, default: False)
 ```

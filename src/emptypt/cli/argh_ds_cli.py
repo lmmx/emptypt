@@ -56,8 +56,9 @@ def populate_parser_descriptions(parser: ArgumentParser, struct: Callable) -> No
                 case msgspec._core.Factory() as factory_manager:
                     # The msgspec default factory didn't get instantiated by argh
                     action.default = factory_manager.factory()
-            desc = parsed_ds.get(flag, "")
-            action.help = f"{desc}(type: {hint}, default: {action.default})"
+            desc: str | None = parsed_ds.get(flag)
+            flag_meta = f"(type: {hint}, default: {action.default})"
+            action.help = " ".join(filter(None, [desc, flag_meta]))
 
 
 def dispatch_command(cmd: Callable, **argh_kwargs):
