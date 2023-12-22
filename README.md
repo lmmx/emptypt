@@ -4,6 +4,8 @@ Template for an entrypoint CLI using msgspec
 
 ## Timing Benchmarks
 
+Desktop
+
 | Configuration        | Execution Time | entrypoint       | Autogenerate from config  |
 |----------------------|----------------|------------------|---------------------------|
 | Stdlib (baseline)    | 0.019s         | emptypt-minimum  | -                         |
@@ -12,6 +14,17 @@ Template for an entrypoint CLI using msgspec
 | msgspec + click      | 0.075s         | emptypt-click    | No                        |
 | msgspec + typer      | 0.094s         | emptypt-typer    | No                        |
 | msgspec + defopt     | 0.175s         | emptypt-defopt   | Yes                       |
+
+Laptop (1.1 GHz)
+
+| Configuration        | Execution Time | entrypoint       | Autogenerate from config  |
+|----------------------|----------------|------------------|---------------------------|
+| Stdlib (baseline)    | 0.038s         | emptypt-minimum  | -                         |
+| msgspec              | 0.110s         | emptypt-simple   | -                         |
+| msgspec + argh       | 0.145s         | emptypt-argh     | Yes                       |
+| msgspec + click      | 0.180s         | emptypt-click    | No                        |
+| msgspec + typer      | 0.235s         | emptypt-typer    | No                        |
+| msgspec + defopt     | 0.440s         | emptypt-defopt   | Yes                       |
 
 ## Details
 

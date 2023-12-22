@@ -3,7 +3,7 @@
 
 [metadata]
 groups = ["default", "develop", "docs", "mkdocs", "test"]
-strategy = ["cross_platform", "inherit_metadata"]
+strategy = ["cross_platform"]
 lock_version = "4.4.1"
 content_hash = "sha256:adc885562c04fe54f121e4e8c1e0eedd13f9d7ee736356986694e6e910641cd7"
 
@@ -12,7 +12,6 @@ name = "argh"
 version = "0.30.4"
 requires_python = ">=3.8"
 summary = "An unobtrusive argparse wrapper with natural syntax"
-groups = ["default"]
 files = [
     {file = "argh-0.30.4-py3-none-any.whl", hash = "sha256:f38842b38a2a451b58ff7515bc370764f074ce56f613ddda71001a8b971d199a"},
     {file = "argh-0.30.4.tar.gz", hash = "sha256:9fca8e69c4dad4f8d2a7bdfbdd80b0754462b53510a03e1b5cf2b43a87e6e960"},
@@ -23,7 +22,6 @@ name = "babel"
 version = "2.14.0"
 requires_python = ">=3.7"
 summary = "Internationalization utilities"
-groups = ["docs"]
 files = [
     {file = "Babel-2.14.0-py3-none-any.whl", hash = "sha256:efb1a25b7118e67ce3a259bed20545c29cb68be8ad2c784c83689981b7a57287"},
     {file = "Babel-2.14.0.tar.gz", hash = "sha256:6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363"},
@@ -34,7 +32,6 @@ name = "cairocffi"
 version = "1.6.1"
 requires_python = ">=3.7"
 summary = "cffi-based cairo bindings for Python"
-groups = ["docs"]
 dependencies = [
     "cffi>=1.1.0",
 ]
@@ -48,7 +45,6 @@ name = "cairosvg"
 version = "2.7.1"
 requires_python = ">=3.5"
 summary = "A Simple SVG Converter based on Cairo"
-groups = ["docs"]
 dependencies = [
     "cairocffi",
     "cssselect2",
@@ -66,7 +62,6 @@ name = "certifi"
 version = "2023.11.17"
 requires_python = ">=3.6"
 summary = "Python package for providing Mozilla's CA Bundle."
-groups = ["docs"]
 files = [
     {file = "certifi-2023.11.17-py3-none-any.whl", hash = "sha256:e036ab49d5b79556f99cfc2d9320b34cfbe5be05c5871b51de9329f0603b0474"},
     {file = "certifi-2023.11.17.tar.gz", hash = "sha256:9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1"},
@@ -77,7 +72,6 @@ name = "cffi"
 version = "1.16.0"
 requires_python = ">=3.8"
 summary = "Foreign Function Interface for Python calling C code."
-groups = ["docs"]
 dependencies = [
     "pycparser",
 ]
@@ -101,7 +95,6 @@ name = "charset-normalizer"
 version = "3.3.2"
 requires_python = ">=3.7.0"
 summary = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-groups = ["docs"]
 files = [
     {file = "charset-normalizer-3.3.2.tar.gz", hash = "sha256:f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"},
     {file = "charset_normalizer-3.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:802fe99cca7457642125a8a88a084cef28ff0cf9407060f7b93dca5aa25480db"},
@@ -127,7 +120,6 @@ name = "click"
 version = "8.1.7"
 requires_python = ">=3.7"
 summary = "Composable command line interface toolkit"
-groups = ["default", "docs"]
 dependencies = [
     "colorama; platform_system == \"Windows\"",
 ]
@@ -141,7 +133,6 @@ name = "colorama"
 version = "0.4.6"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 summary = "Cross-platform colored terminal text."
-groups = ["default", "docs", "test"]
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
@@ -151,7 +142,6 @@ files = [
 name = "csscompressor"
 version = "0.9.5"
 summary = "A python port of YUI CSS Compressor"
-groups = ["docs"]
 files = [
     {file = "csscompressor-0.9.5.tar.gz", hash = "sha256:afa22badbcf3120a4f392e4d22f9fff485c044a1feda4a950ecc5eba9dd31a05"},
 ]
@@ -161,7 +151,6 @@ name = "cssselect2"
 version = "0.7.0"
 requires_python = ">=3.7"
 summary = "CSS selectors for Python ElementTree"
-groups = ["docs"]
 dependencies = [
     "tinycss2",
     "webencodings",
@@ -176,7 +165,6 @@ name = "defopt"
 version = "6.4.0"
 requires_python = ">=3.5"
 summary = "Effortless argument parser"
-groups = ["default"]
 dependencies = [
     "colorama>=0.3.4; sys_platform == \"win32\"",
     "docutils>=0.12",
@@ -191,7 +179,6 @@ name = "defusedxml"
 version = "0.7.1"
 requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 summary = "XML bomb protection for Python stdlib modules"
-groups = ["docs"]
 files = [
     {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
     {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
@@ -202,7 +189,6 @@ name = "docutils"
 version = "0.20.1"
 requires_python = ">=3.7"
 summary = "Docutils -- Python Documentation Utilities"
-groups = ["default"]
 files = [
     {file = "docutils-0.20.1-py3-none-any.whl", hash = "sha256:96f387a2c5562db4476f09f13bbab2192e764cac08ebbf3a34a95d9b1e4a59d6"},
     {file = "docutils-0.20.1.tar.gz", hash = "sha256:f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"},
@@ -212,7 +198,6 @@ files = [
 name = "ghp-import"
 version = "2.1.0"
 summary = "Copy your docs directly to the gh-pages branch."
-groups = ["docs"]
 dependencies = [
     "python-dateutil>=2.8.1",
 ]
@@ -226,7 +211,6 @@ name = "gitdb"
 version = "4.0.11"
 requires_python = ">=3.7"
 summary = "Git Object Database"
-groups = ["docs"]
 dependencies = [
     "smmap<6,>=3.0.1",
 ]
@@ -240,7 +224,6 @@ name = "gitpython"
 version = "3.1.40"
 requires_python = ">=3.7"
 summary = "GitPython is a Python library used to interact with Git repositories"
-groups = ["docs"]
 dependencies = [
     "gitdb<5,>=4.0.1",
 ]
@@ -253,7 +236,6 @@ files = [
 name = "htmlmin2"
 version = "0.1.13"
 summary = "An HTML Minifier"
-groups = ["docs"]
 files = [
     {file = "htmlmin2-0.1.13-py3-none-any.whl", hash = "sha256:75609f2a42e64f7ce57dbff28a39890363bde9e7e5885db633317efbdf8c79a2"},
 ]
@@ -263,7 +245,6 @@ name = "idna"
 version = "3.6"
 requires_python = ">=3.5"
 summary = "Internationalized Domain Names in Applications (IDNA)"
-groups = ["docs"]
 files = [
     {file = "idna-3.6-py3-none-any.whl", hash = "sha256:c05567e9c24a6b9faaa835c4821bad0590fbb9d5779e7caa6e1cc4978e7eb24f"},
     {file = "idna-3.6.tar.gz", hash = "sha256:9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"},
@@ -274,7 +255,6 @@ name = "iniconfig"
 version = "2.0.0"
 requires_python = ">=3.7"
 summary = "brain-dead simple config-ini parsing"
-groups = ["test"]
 files = [
     {file = "iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
     {file = "iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
@@ -285,7 +265,6 @@ name = "jinja2"
 version = "3.1.2"
 requires_python = ">=3.7"
 summary = "A very fast and expressive template engine."
-groups = ["docs"]
 dependencies = [
     "MarkupSafe>=2.0",
 ]
@@ -298,7 +277,6 @@ files = [
 name = "jsmin"
 version = "3.0.1"
 summary = "JavaScript minifier."
-groups = ["docs"]
 files = [
     {file = "jsmin-3.0.1.tar.gz", hash = "sha256:c0959a121ef94542e807a674142606f7e90214a2b3d1eb17300244bbb5cc2bfc"},
 ]
@@ -308,7 +286,6 @@ name = "markdown"
 version = "3.5.1"
 requires_python = ">=3.8"
 summary = "Python implementation of John Gruber's Markdown."
-groups = ["docs"]
 files = [
     {file = "Markdown-3.5.1-py3-none-any.whl", hash = "sha256:5874b47d4ee3f0b14d764324d2c94c03ea66bee56f2d929da9f2508d65e722dc"},
     {file = "Markdown-3.5.1.tar.gz", hash = "sha256:b65d7beb248dc22f2e8a31fb706d93798093c308dc1aba295aedeb9d41a813bd"},
@@ -319,7 +296,6 @@ name = "markupsafe"
 version = "2.1.3"
 requires_python = ">=3.7"
 summary = "Safely add untrusted strings to HTML/XML markup."
-groups = ["docs"]
 files = [
     {file = "MarkupSafe-2.1.3-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:ad9e82fb8f09ade1c3e1b996a6337afac2b8b9e365f926f5a61aacc71adc5b3c"},
     {file = "MarkupSafe-2.1.3-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:3c0fae6c3be832a0a0473ac912810b2877c8cb9d76ca48de1ed31e1c68386575"},
@@ -339,7 +315,6 @@ name = "mergedeep"
 version = "1.3.4"
 requires_python = ">=3.6"
 summary = "A deep merge function for 🐍."
-groups = ["docs"]
 files = [
     {file = "mergedeep-1.3.4-py3-none-any.whl", hash = "sha256:70775750742b25c0d8f36c55aed03d24c3384d17c951b3175d898bd778ef0307"},
     {file = "mergedeep-1.3.4.tar.gz", hash = "sha256:0096d52e9dad9939c3d975a774666af186eda617e6ca84df4c94dec30004f2a8"},
@@ -350,7 +325,6 @@ name = "mkdocs"
 version = "1.5.3"
 requires_python = ">=3.7"
 summary = "Project documentation with Markdown."
-groups = ["docs"]
 dependencies = [
     "click>=7.0",
     "colorama>=0.4; platform_system == \"Windows\"",
@@ -376,7 +350,6 @@ name = "mkdocs-autorefs"
 version = "0.5.0"
 requires_python = ">=3.8"
 summary = "Automatically link across pages in MkDocs."
-groups = ["docs"]
 dependencies = [
     "Markdown>=3.3",
     "mkdocs>=1.1",
@@ -391,7 +364,6 @@ name = "mkdocs-material"
 version = "9.5.2"
 requires_python = ">=3.8"
 summary = "Documentation that simply works"
-groups = ["docs"]
 dependencies = [
     "babel~=2.10",
     "colorama~=0.4",
@@ -415,7 +387,6 @@ name = "mkdocs-material-extensions"
 version = "1.3.1"
 requires_python = ">=3.8"
 summary = "Extension pack for Python Markdown and MkDocs Material."
-groups = ["docs"]
 files = [
     {file = "mkdocs_material_extensions-1.3.1-py3-none-any.whl", hash = "sha256:adff8b62700b25cb77b53358dad940f3ef973dd6db797907c49e3c2ef3ab4e31"},
     {file = "mkdocs_material_extensions-1.3.1.tar.gz", hash = "sha256:10c9511cea88f568257f960358a467d12b970e1f7b2c0e5fb2bb48cab1928443"},
@@ -427,7 +398,6 @@ version = "9.5.2"
 extras = ["imaging", "recommended"]
 requires_python = ">=3.8"
 summary = "Documentation that simply works"
-groups = ["docs"]
 dependencies = [
     "cairosvg~=2.6",
     "mkdocs-material==9.5.2",
@@ -446,7 +416,6 @@ name = "mkdocs-minify-plugin"
 version = "0.7.2"
 requires_python = ">=3.8"
 summary = "An MkDocs plugin to minify HTML, JS or CSS files prior to being written to disk"
-groups = ["docs"]
 dependencies = [
     "csscompressor>=0.9.5",
     "htmlmin2>=0.1.13",
@@ -463,7 +432,6 @@ name = "mkdocs-redirects"
 version = "1.2.1"
 requires_python = ">=3.6"
 summary = "A MkDocs plugin for dynamic page redirects to prevent broken links."
-groups = ["docs"]
 dependencies = [
     "mkdocs>=1.1.1",
 ]
@@ -476,7 +444,6 @@ name = "mkdocs-rss-plugin"
 version = "1.11.0"
 requires_python = ">=3.8, <4"
 summary = "MkDocs plugin which generates a static RSS feed using git log and page.meta."
-groups = ["docs"]
 dependencies = [
     "GitPython<3.2,>=3.1",
     "mkdocs<2,>=1.4",
@@ -492,7 +459,6 @@ name = "mkdocstrings"
 version = "0.24.0"
 requires_python = ">=3.8"
 summary = "Automatic documentation from sources, for MkDocs."
-groups = ["docs"]
 dependencies = [
     "Jinja2>=2.11.1",
     "Markdown>=3.3",
@@ -513,7 +479,6 @@ name = "msgspec"
 version = "0.18.5"
 requires_python = ">=3.8"
 summary = "A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML."
-groups = ["default"]
 files = [
     {file = "msgspec-0.18.5-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:ee1f9414523d9a53744d21a6a2b6a636d9008be016963148a2646b38132e11dd"},
     {file = "msgspec-0.18.5-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:0017f6af35a3959002df4c82af60c1df2160701529dd89b17df971fde5945257"},
@@ -530,7 +495,6 @@ name = "packaging"
 version = "23.2"
 requires_python = ">=3.7"
 summary = "Core utilities for Python packages"
-groups = ["docs", "test"]
 files = [
     {file = "packaging-23.2-py3-none-any.whl", hash = "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"},
     {file = "packaging-23.2.tar.gz", hash = "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"},
@@ -540,7 +504,6 @@ files = [
 name = "paginate"
 version = "0.5.6"
 summary = "Divides large result sets into pages for easier browsing"
-groups = ["docs"]
 files = [
     {file = "paginate-0.5.6.tar.gz", hash = "sha256:5e6007b6a9398177a7e1648d04fdd9f8c9766a1a945bceac82f1929e8c78af2d"},
 ]
@@ -550,7 +513,6 @@ name = "pathspec"
 version = "0.12.1"
 requires_python = ">=3.8"
 summary = "Utility library for gitignore style pattern matching of file paths."
-groups = ["docs"]
 files = [
     {file = "pathspec-0.12.1-py3-none-any.whl", hash = "sha256:a0d503e138a4c123b27490a4f7beda6a01c6f288df0e4a8b79c7eb0dc7b4cc08"},
     {file = "pathspec-0.12.1.tar.gz", hash = "sha256:a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"},
@@ -561,7 +523,6 @@ name = "pillow"
 version = "9.5.0"
 requires_python = ">=3.7"
 summary = "Python Imaging Library (Fork)"
-groups = ["docs"]
 files = [
     {file = "Pillow-9.5.0-cp311-cp311-macosx_10_10_x86_64.whl", hash = "sha256:7ec6f6ce99dab90b52da21cf0dc519e21095e332ff3b399a357c187b1a5eee32"},
     {file = "Pillow-9.5.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:560737e70cb9c6255d6dcba3de6578a9e2ec4b573659943a5e7e4af13f298f5c"},
@@ -593,7 +554,6 @@ name = "platformdirs"
 version = "4.1.0"
 requires_python = ">=3.8"
 summary = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-groups = ["docs"]
 files = [
     {file = "platformdirs-4.1.0-py3-none-any.whl", hash = "sha256:11c8f37bcca40db96d8144522d925583bdb7a31f7b0e37e3ed4318400a8e2380"},
     {file = "platformdirs-4.1.0.tar.gz", hash = "sha256:906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"},
@@ -604,7 +564,6 @@ name = "pluggy"
 version = "1.3.0"
 requires_python = ">=3.8"
 summary = "plugin and hook calling mechanisms for python"
-groups = ["test"]
 files = [
     {file = "pluggy-1.3.0-py3-none-any.whl", hash = "sha256:d89c696a773f8bd377d18e5ecda92b7a3793cbe66c87060a6fb58c7b6e1061f7"},
     {file = "pluggy-1.3.0.tar.gz", hash = "sha256:cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"},
@@ -614,7 +573,6 @@ files = [
 name = "pockets"
 version = "0.9.1"
 summary = "A collection of helpful Python tools!"
-groups = ["default"]
 dependencies = [
     "six>=1.5.2",
 ]
@@ -628,7 +586,6 @@ name = "pycparser"
 version = "2.21"
 requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 summary = "C parser in Python"
-groups = ["docs"]
 files = [
     {file = "pycparser-2.21-py2.py3-none-any.whl", hash = "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9"},
     {file = "pycparser-2.21.tar.gz", hash = "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"},
@@ -639,7 +596,6 @@ name = "pygments"
 version = "2.17.2"
 requires_python = ">=3.7"
 summary = "Pygments is a syntax highlighting package written in Python."
-groups = ["docs"]
 files = [
     {file = "pygments-2.17.2-py3-none-any.whl", hash = "sha256:b27c2826c47d0f3219f29554824c30c5e8945175d888647acd804ddd04af846c"},
     {file = "pygments-2.17.2.tar.gz", hash = "sha256:da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"},
@@ -650,7 +606,6 @@ name = "pymdown-extensions"
 version = "10.5"
 requires_python = ">=3.8"
 summary = "Extension pack for Python Markdown."
-groups = ["docs"]
 dependencies = [
     "markdown>=3.5",
     "pyyaml",
@@ -664,7 +619,6 @@ files = [
 name = "pysnooper"
 version = "1.2.0"
 summary = "A poor man's debugger for Python."
-groups = ["develop"]
 files = [
     {file = "PySnooper-1.2.0-py2.py3-none-any.whl", hash = "sha256:aa859aa9a746cffc1f35e4ee469d49c3cc5185b5fc0c571feb3af3c94d2eb625"},
     {file = "PySnooper-1.2.0.tar.gz", hash = "sha256:810669e162a250a066d8662e573adbc5af770e937c5b5578f28bb7355d1c859b"},
@@ -675,7 +629,6 @@ name = "pytest"
 version = "7.4.3"
 requires_python = ">=3.7"
 summary = "pytest: simple powerful testing with Python"
-groups = ["test"]
 dependencies = [
     "colorama; sys_platform == \"win32\"",
     "iniconfig",
@@ -692,7 +645,6 @@ name = "python-dateutil"
 version = "2.8.2"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 summary = "Extensions to the standard Python datetime module"
-groups = ["docs"]
 dependencies = [
     "six>=1.5",
 ]
@@ -706,7 +658,6 @@ name = "pyyaml"
 version = "6.0.1"
 requires_python = ">=3.6"
 summary = "YAML parser and emitter for Python"
-groups = ["docs"]
 files = [
     {file = "PyYAML-6.0.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:6965a7bc3cf88e5a1c3bd2e0b5c22f8d677dc88a455344035f03399034eb3007"},
     {file = "PyYAML-6.0.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:f003ed9ad21d6a4713f0a9b5a7a0a79e08dd0f221aff4525a2be4c346ee60aab"},
@@ -724,7 +675,6 @@ name = "pyyaml-env-tag"
 version = "0.1"
 requires_python = ">=3.6"
 summary = "A custom YAML tag for referencing environment variables in YAML files. "
-groups = ["docs"]
 dependencies = [
     "pyyaml",
 ]
@@ -738,7 +688,6 @@ name = "regex"
 version = "2023.10.3"
 requires_python = ">=3.7"
 summary = "Alternative regular expression module, to replace re."
-groups = ["docs"]
 files = [
     {file = "regex-2023.10.3-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:90a79bce019c442604662d17bf69df99090e24cdc6ad95b18b6725c2988a490e"},
     {file = "regex-2023.10.3-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c7964c2183c3e6cce3f497e3a9f49d182e969f2dc3aeeadfa18945ff7bdd7051"},
@@ -762,7 +711,6 @@ name = "requests"
 version = "2.31.0"
 requires_python = ">=3.7"
 summary = "Python HTTP for Humans."
-groups = ["docs"]
 dependencies = [
     "certifi>=2017.4.17",
     "charset-normalizer<4,>=2",
@@ -779,7 +727,6 @@ name = "six"
 version = "1.16.0"
 requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 summary = "Python 2 and 3 compatibility utilities"
-groups = ["default", "docs"]
 files = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
@@ -790,7 +737,6 @@ name = "smmap"
 version = "5.0.1"
 requires_python = ">=3.7"
 summary = "A pure Python implementation of a sliding window memory map manager"
-groups = ["docs"]
 files = [
     {file = "smmap-5.0.1-py3-none-any.whl", hash = "sha256:e6d8668fa5f93e706934a62d7b4db19c8d9eb8cf2adbb75ef1b675aa332b69da"},
     {file = "smmap-5.0.1.tar.gz", hash = "sha256:dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"},
@@ -800,7 +746,6 @@ files = [
 name = "sphinxcontrib-napoleon"
 version = "0.7"
 summary = "Sphinx \"napoleon\" extension."
-groups = ["default"]
 dependencies = [
     "pockets>=0.3",
     "six>=1.5.2",
@@ -815,7 +760,6 @@ name = "tinycss2"
 version = "1.2.1"
 requires_python = ">=3.7"
 summary = "A tiny CSS parser"
-groups = ["docs"]
 dependencies = [
     "webencodings>=0.4",
 ]
@@ -829,7 +773,6 @@ name = "typer"
 version = "0.9.0"
 requires_python = ">=3.6"
 summary = "Typer, build great CLIs. Easy to code. Based on Python type hints."
-groups = ["default"]
 dependencies = [
     "click<9.0.0,>=7.1.1",
     "typing-extensions>=3.7.4.3",
@@ -844,7 +787,6 @@ name = "typing-extensions"
 version = "4.9.0"
 requires_python = ">=3.8"
 summary = "Backported and Experimental Type Hints for Python 3.8+"
-groups = ["default"]
 files = [
     {file = "typing_extensions-4.9.0-py3-none-any.whl", hash = "sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd"},
     {file = "typing_extensions-4.9.0.tar.gz", hash = "sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"},
@@ -855,8 +797,6 @@ name = "tzdata"
 version = "2023.3"
 requires_python = ">=2"
 summary = "Provider of IANA time zone data"
-groups = ["docs"]
-marker = "python_version >= \"3.9\" and sys_platform == \"win32\""
 files = [
     {file = "tzdata-2023.3-py2.py3-none-any.whl", hash = "sha256:7e65763eef3120314099b6939b5546db7adce1e7d6f2e179e3df563c70511eda"},
     {file = "tzdata-2023.3.tar.gz", hash = "sha256:11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"},
@@ -867,7 +807,6 @@ name = "urllib3"
 version = "2.1.0"
 requires_python = ">=3.8"
 summary = "HTTP library with thread-safe connection pooling, file post, and more."
-groups = ["docs"]
 files = [
     {file = "urllib3-2.1.0-py3-none-any.whl", hash = "sha256:55901e917a5896a349ff771be919f8bd99aff50b79fe58fec595eb37bbc56bb3"},
     {file = "urllib3-2.1.0.tar.gz", hash = "sha256:df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"},
@@ -878,7 +817,6 @@ name = "watchdog"
 version = "3.0.0"
 requires_python = ">=3.7"
 summary = "Filesystem events monitoring"
-groups = ["docs"]
 files = [
     {file = "watchdog-3.0.0-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:2b57a1e730af3156d13b7fdddfc23dea6487fceca29fc75c5a868beed29177ae"},
     {file = "watchdog-3.0.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:7ade88d0d778b1b222adebcc0927428f883db07017618a5e684fd03b83342bd9"},
@@ -903,7 +841,6 @@ files = [
 name = "webencodings"
 version = "0.5.1"
 summary = "Character encoding aliases for legacy web content"
-groups = ["docs"]
 files = [
     {file = "webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"},
     {file = "webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"},
