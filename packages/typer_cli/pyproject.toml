@@ -6,8 +6,15 @@ dependencies = [
 description = "Add your description here"
 name = "typer-cli"
 readme = "README.md"
-requires-python = ">=3.11, <3.12"
+requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
 emptypt-typer = "typer_cli.main:run_cli"
+
+[tool.lint.isort]
+known_first_party = ["typer_cli"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["typer_cli"]
+

@@ -32,7 +32,7 @@ def handle_validation_error(ve: ValidationError) -> None:
     return
 
 
-def run_cli() -> None:
+def run_cli() -> list:
     try:
         config = configure()
     except ValidationError as ve:
@@ -40,5 +40,4 @@ def run_cli() -> None:
         with CaptureInvalidConfigExit():
             configure(argv=["-h"])
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

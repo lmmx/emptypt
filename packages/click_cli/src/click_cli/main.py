@@ -1,4 +1,5 @@
 from sys import stderr
+from pysnooper import snoop
 from textwrap import indent
 
 import click
@@ -35,7 +36,7 @@ def handle_validation_error(ve: ValidationError) -> None:
 )
 @click.option("--quiet", is_flag=True, help="Whether to suppress console output.")
 @click.option("--debug", is_flag=True, help="Whether to run debug diagnostics.")
-def run_cli(io_arg1, filter_arg1, quiet, debug) -> None:
+def run_cli(io_arg1, filter_arg1, quiet, debug) -> list:
     try:
         config = ActionConfig(
             io_arg1=io_arg1,
@@ -46,8 +47,8 @@ def run_cli(io_arg1, filter_arg1, quiet, debug) -> None:
     except ValidationError as ve:
         handle_validation_error(ve)
         with CaptureInvalidConfigExit():
+            print("(Failed)")
             raise NotImplementedError("TODO: make this show help text")
             pass  # configure(argv=["-h"])
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

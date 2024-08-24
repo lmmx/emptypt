@@ -77,5 +77,4 @@ def run_cli() -> None:
     except EntryptMisconfigurationExit:
         configure(argv=["-h"])
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

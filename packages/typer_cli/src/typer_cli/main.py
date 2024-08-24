@@ -34,5 +34,4 @@ def run_cli(debug: bool = False) -> None:
     except ValidationError as ve:
         handle_validation_error(ve)
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

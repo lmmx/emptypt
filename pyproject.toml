@@ -15,21 +15,26 @@ classifiers = [
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries",
 ]
-dependencies = []
+dependencies = [
+    "argh-cli",
+    "argh-ds-cli",
+    "click-cli",
+    "defopt-cli",
+    "emptypt",
+    "simple-cli",
+    "typer-cli",
+]
 description = "Benchmarking Python package entrypoint latency."
 dynamic = ["version"]
 keywords = ["CLI", "benchmarking", "entrypoint", "latency"]
 license = {text = "MIT"}
-name = "emptypt"
+name = "emptypt_ws"
 readme = "README.md"
 requires-python = ">=3.10,<3.12"
 
 [project.urls]
 Homepage = "https://github.com/lmmx/emptypt"
 Repository = "https://github.com/lmmx/emptypt.git"
-
-[tool.isort]
-known_first_party = ["emptypt"]
 
 [tool.pdm]
 version = {path = "version.py", source = "file"}
@@ -46,9 +51,6 @@ lines-after-imports = 2
 ignore = ["C408", "C901", "E501", "E741"]
 select = ["C", "E", "F", "I", "W"]
 
-[tool.ruff.lint.isort]
-known-first-party = ["emptypt"]
-
 [tool.tomlsort]
 all = true
 in_place = true
@@ -61,9 +63,15 @@ argh_cli = {workspace = true}
 argh_ds_cli = {workspace = true}
 click_cli = {workspace = true}
 defopt_cli = {workspace = true}
-emptypt_core = {workspace = true}
+emptypt = {workspace = true}
 simple_cli = {workspace = true}
 typer_cli = {workspace = true}
+argh-cli = { workspace = true }
+argh-ds-cli = { workspace = true }
+click-cli = { workspace = true }
+defopt-cli = { workspace = true }
+simple-cli = { workspace = true }
+typer-cli = { workspace = true }
 
 [tool.uv.workspace]
 members = [
@@ -71,7 +79,7 @@ members = [
     "packages/argh_ds_cli",
     "packages/click_cli",
     "packages/defopt_cli",
-    "packages/emptypt_core",
+    "packages/emptypt",
     "packages/simple_cli",
     "packages/typer_cli",
 ]
