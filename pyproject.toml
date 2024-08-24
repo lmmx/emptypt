@@ -7,27 +7,22 @@ authors = [
     {email = "louismmx@gmail.com", name = "Louis Maddox"},
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Framework :: Pydantic :: 2",
-    "Framework :: Pydantic",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = []
-description = "Git diff handling in Python."
+description = "Benchmarking Python package entrypoint latency."
 dynamic = ["version"]
-keywords = [
-    "git",
-    "pydantic",
-    "pypi",
-]
+keywords = ["CLI", "benchmarking", "entrypoint", "latency"]
 license = {text = "MIT"}
 name = "emptypt"
 readme = "README.md"
-requires-python = ">=3.11,<3.12"
+requires-python = ">=3.10,<3.12"
 
 [project.urls]
 Homepage = "https://github.com/lmmx/emptypt"
@@ -37,18 +32,9 @@ Repository = "https://github.com/lmmx/emptypt.git"
 known_first_party = ["emptypt"]
 
 [tool.pdm]
-version = {path = "src/emptypt/__init__.py", source = "file"}
+version = {path = "version.py", source = "file"}
 
 [tool.pdm.dev-dependencies]
-develop = [
-    "pysnooper>=1.2.0",
-]
-docs = [
-    "mkdocs-material[recommended,imaging]>=9.5.2",
-    "mkdocs>=1.5.3",
-    "mkdocstrings>=0.24.0",
-]
-mkdocs = []
 test = [
     "pytest>=7.4.0",
 ]
@@ -63,10 +49,6 @@ select = ["C", "E", "F", "I", "W"]
 [tool.ruff.lint.isort]
 known-first-party = ["emptypt"]
 
-[tool.ruff.lint.per-file-ignores]
-# Ignore `E401` (unused imports) in all `__init__.py` files.
-"__init__.py" = ["E401"]
-
 [tool.tomlsort]
 all = true
 in_place = true
@@ -75,7 +57,21 @@ spaces_indent_inline_array = 4  # Match Python PEP 8
 trailing_comma_inline_array = true
 
 [tool.uv.sources]
-tpt = {workspace = true}
+argh_cli = {workspace = true}
+argh_ds_cli = {workspace = true}
+click_cli = {workspace = true}
+defopt_cli = {workspace = true}
+emptypt_core = {workspace = true}
+simple_cli = {workspace = true}
+typer_cli = {workspace = true}
 
 [tool.uv.workspace]
-members = ["packages/argh_cli", "packages/argh_ds_cli", "packages/click_cli", "packages/defopt_cli", "packages/simple_cli", "packages/typer_cli"]
+members = [
+    "packages/argh_cli",
+    "packages/argh_ds_cli",
+    "packages/click_cli",
+    "packages/defopt_cli",
+    "packages/emptypt_core",
+    "packages/simple_cli",
+    "packages/typer_cli",
+]
