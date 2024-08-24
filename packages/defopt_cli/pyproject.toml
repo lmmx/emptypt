@@ -1,10 +1,10 @@
 [project]
-name = "defopt-cli"
-version = "0.1.0"
+dependencies = []
 description = "Add your description here"
+name = "defopt-cli"
 readme = "README.md"
 requires-python = ">=3.11, <3.12"
-dependencies = []
+version = "0.1.0"
 
 [project.scripts]
 emptypt-defopt = "defopt_cli.main:run_cli"

@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 from argparse import ArgumentParser
+from collections.abc import Callable
 from textwrap import dedent
-from typing import Annotated, Callable, get_args, get_origin, get_type_hints
+from typing import Annotated, get_args, get_origin, get_type_hints
 
 import argh
 import msgspec

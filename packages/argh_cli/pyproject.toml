@@ -1,10 +1,10 @@
 [project]
-name = "argh-cli"
-version = "0.1.0"
+dependencies = []
 description = "Add your description here"
+name = "argh-cli"
 readme = "README.md"
 requires-python = ">=3.11, <3.12"
-dependencies = []
+version = "0.1.0"
 
 [project.scripts]
 emptypt-argh = "argh_cli.main:run_cli"

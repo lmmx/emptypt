@@ -28,14 +28,19 @@ def handle_validation_error(ve: ValidationError) -> None:
 @click.command(context_settings={"help_option_names": ["-h", "--help"]})
 @click.option("--io_arg1", is_flag=True, help="The first IO configuration entry.")
 @click.option(
-    "--filter_arg1", is_flag=True, help="The first filtering configuration entry."
+    "--filter_arg1",
+    is_flag=True,
+    help="The first filtering configuration entry.",
 )
 @click.option("--quiet", is_flag=True, help="Whether to suppress console output.")
 @click.option("--debug", is_flag=True, help="Whether to run debug diagnostics.")
 def run_cli(io_arg1, filter_arg1, quiet, debug) -> None:
     try:
         config = ActionConfig(
-            io_arg1=io_arg1, filter_arg1=filter_arg1, quiet=quiet, debug=debug
+            io_arg1=io_arg1,
+            filter_arg1=filter_arg1,
+            quiet=quiet,
+            debug=debug,
         )
     except ValidationError as ve:
         handle_validation_error(ve)
