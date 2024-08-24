@@ -2,6 +2,20 @@
 
 Template for an entrypoint CLI using msgspec
 
+## Workspace setup
+
+This repo has been refactored as a [uv workspace][uvws] in August 2024.
+
+Each CLI is a standalone package, and there's also a package called `emptypt` (all in the packages
+subdirectory). To install all CLI packages (each of which exposes entrypoints in its
+`pyproject.toml` project scripts section) and therefore to obtain all CLI commands, run:
+
+```sh
+uv pip install .
+```
+
+[uvws]: https://docs.astral.sh/uv/concepts/workspaces/
+
 ## Timing Benchmarks
 
 Desktop
