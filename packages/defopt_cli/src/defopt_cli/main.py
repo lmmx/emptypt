@@ -4,9 +4,10 @@ from textwrap import indent
 import defopt
 from msgspec import ValidationError
 
-from ..core.action import foo
-from ..core.error_handlers import CaptureInvalidConfigExit
-from ..interfaces.action import ActionConfig
+from emptypt.action import foo
+from emptypt.error_handlers import CaptureInvalidConfigExit
+
+from .interface import ActionConfig
 
 __all__ = ("run_cli",)
 
@@ -31,7 +32,7 @@ def handle_validation_error(ve: ValidationError) -> None:
     return
 
 
-def run_cli() -> None:
+def run_cli() -> list:
     try:
         config = configure()
     except ValidationError as ve:
@@ -39,5 +40,4 @@ def run_cli() -> None:
         with CaptureInvalidConfigExit():
             configure(argv=["-h"])
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

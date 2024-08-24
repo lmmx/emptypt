@@ -1,15 +1,17 @@
 from __future__ import annotations
 
 from argparse import ArgumentParser
-from typing import Annotated, Callable, get_args, get_origin, get_type_hints
+from collections.abc import Callable
+from typing import Annotated, get_args, get_origin, get_type_hints
 
 import argh
 import msgspec
 
-from ..core.action import foo
-from ..core.error_handlers import CaptureInvalidConfigExit
-from ..core.errors import EntryptMisconfigurationExit
-from ..interfaces.action import ActionConfig
+from emptypt.action import foo
+from emptypt.error_handlers import CaptureInvalidConfigExit
+from emptypt.errors import EntryptMisconfigurationExit
+
+from .interface import ActionConfig
 
 __all__ = ("run_cli",)
 
@@ -75,5 +77,4 @@ def run_cli() -> None:
     except EntryptMisconfigurationExit:
         configure(argv=["-h"])
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

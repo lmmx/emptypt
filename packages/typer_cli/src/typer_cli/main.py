@@ -4,8 +4,9 @@ from textwrap import indent
 import typer
 from msgspec import ValidationError
 
-from ..core.action import foo
-from ..interfaces.action import ActionConfig
+from emptypt.action import foo
+
+from .interface import ActionConfig
 
 __all__ = ("run_cli",)
 
@@ -33,5 +34,4 @@ def run_cli(debug: bool = False) -> None:
     except ValidationError as ve:
         handle_validation_error(ve)
     else:
-        _ = foo(config)
-        return None
+        return foo(config)

@@ -2,6 +2,20 @@
 
 Template for an entrypoint CLI using msgspec
 
+## Workspace setup
+
+This repo has been refactored as a [uv workspace][uvws] in August 2024.
+
+Each CLI is a standalone package, and there's also a package called `emptypt` (all in the packages
+subdirectory). To install all CLI packages (each of which exposes entrypoints in its
+`pyproject.toml` project scripts section) and therefore to obtain all CLI commands, run:
+
+```sh
+uv pip install .
+```
+
+[uvws]: https://docs.astral.sh/uv/concepts/workspaces/
+
 ## Timing Benchmarks
 
 Desktop
@@ -14,6 +28,17 @@ Desktop
 | msgspec + click             | 0.075s         | emptypt-click    | No                        |
 | msgspec + typer             | 0.094s         | emptypt-typer    | No                        |
 | msgspec + defopt            | 0.175s         | emptypt-defopt   | Yes                       |
+
+Laptop (3.3 GHz)
+
+| Configuration               | Execution Time | entrypoint       | Autogenerate from config  |
+|-----------------------------|----------------|------------------|---------------------------|
+| Stdlib [baseline]           | 0.014s         | emptypt-minimum  | -                         |
+| msgspec                     | 0.015s         | emptypt-simple   | -                         |
+| msgspec + argh (docstring)  | 0.075s         | emptypt-argh     | Yes                       |
+| msgspec + click             | 0.099s         | emptypt-click    | No                        |
+| msgspec + typer             | 0.359s         | emptypt-typer    | No                        |
+| msgspec + defopt            | 0.244s         | emptypt-defopt   | Yes                       |
 
 Laptop (1.1 GHz)
 
