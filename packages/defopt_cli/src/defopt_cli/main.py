@@ -1,15 +1,20 @@
 from sys import stderr
 from textwrap import indent
 
-import typer
+import defopt
 from msgspec import ValidationError
 
-from ..core.action import foo
-from ..interfaces.action import ActionConfig
+from emptypt.action import foo
+from emptypt.error_handlers import CaptureInvalidConfigExit
+from emptypt.interfaces.action import ActionConfig
 
 __all__ = ("run_cli",)
 
-app = typer.Typer(help="CLI tool made with Typer")
+
+def configure(**defopt_kwargs) -> ActionConfig:
+    """Runs defopt CLI using `sys.argv`, raises `SystemExit` if the config is invalid"""
+    defopt_kwargs.update(no_negated_flags=True, show_types=True)
+    return defopt.run(ActionConfig, **defopt_kwargs)
 
 
 def handle_validation_error(ve: ValidationError) -> None:
@@ -26,12 +31,13 @@ def handle_validation_error(ve: ValidationError) -> None:
     return
 
 
-@app.command()  # doesn't work?
-def run_cli(debug: bool = False) -> None:
+def run_cli() -> None:
     try:
-        config = ActionConfig(debug=debug)
+        config = configure()
     except ValidationError as ve:
         handle_validation_error(ve)
+        with CaptureInvalidConfigExit():
+            configure(argv=["-h"])
     else:
         _ = foo(config)
         return None

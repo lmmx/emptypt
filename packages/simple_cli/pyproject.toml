@@ -1,0 +1,11 @@
+[project]
+name = "simple-cli"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11, <3.12"
+dependencies = []
+
+[project.scripts]
+entrypt-minimum = "simple_cli.minimal_op:bar"
+entrypt-simple = "simple_cli.action:foo"

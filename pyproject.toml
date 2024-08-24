@@ -17,10 +17,10 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-    "msgspec>=0.18.5",
-    "defopt>=6.4.0",
     "argh>=0.30.4",
     "click>=8.1.7",
+    "defopt>=6.4.0",
+    "msgspec>=0.18.5",
     "typer>=0.9.0",
 ]
 description = "Git diff handling in Python."
@@ -36,12 +36,12 @@ readme = "README.md"
 requires-python = ">=3.11,<3.12"
 
 [project.scripts]
-emptypt-minimum = "emptypt.core.minimal_op:bar"
-emptypt-simple = "emptypt.core.action:foo"
-emptypt-defopt = "emptypt.cli.defopt_cli:run_cli"
 emptypt-argh = "emptypt.cli.argh_cli:run_cli"
 emptypt-argh-docstr = "emptypt.cli.argh_ds_cli:run_cli"
 emptypt-click = "emptypt.cli.click_cli:run_cli"
+emptypt-defopt = "emptypt.cli.defopt_cli:run_cli"
+emptypt-minimum = "emptypt.core.minimal_op:bar"
+emptypt-simple = "emptypt.core.action:foo"
 emptypt-typer = "emptypt.cli.typer_cli:run_cli"
 
 [project.urls]
@@ -89,3 +89,9 @@ in_place = true
 spaces_before_inline_comment = 2  # Match Python PEP 8
 spaces_indent_inline_array = 4  # Match Python PEP 8
 trailing_comma_inline_array = true
+
+[tool.uv.sources]
+tpt = {workspace = true}
+
+[tool.uv.workspace]
+members = ["packages/argh_cli", "packages/argh_ds_cli", "packages/click_cli", "packages/defopt_cli", "packages/simple_cli", "packages/typer_cli"]

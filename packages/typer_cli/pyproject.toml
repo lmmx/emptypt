@@ -1,0 +1,10 @@
+[project]
+name = "typer-cli"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11, <3.12"
+dependencies = []
+
+[project.scripts]
+emptypt-typer = "typer_cli.main:run_cli"

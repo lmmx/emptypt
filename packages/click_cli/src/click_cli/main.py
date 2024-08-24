@@ -4,9 +4,9 @@ from textwrap import indent
 import click
 from msgspec import ValidationError
 
-from ..core.action import foo
-from ..core.error_handlers import CaptureInvalidConfigExit
-from ..interfaces.action import ActionConfig
+from emptypt.action import foo
+from emptypt.error_handlers import CaptureInvalidConfigExit
+from emptypt.interfaces.action import ActionConfig
 
 __all__ = ("run_cli",)
 

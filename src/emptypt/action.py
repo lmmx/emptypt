@@ -4,5 +4,5 @@ from .minimal_op import bar
 __all__ = ("foo",)
 
 
-def foo(config: ActionConfig | dict = {}):
+def foo(config: dict = {}):
     return bar()
