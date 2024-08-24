@@ -11,4 +11,3 @@ known_first_party = ["emptypt"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["emptypt"]
-
