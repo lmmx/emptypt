@@ -1,5 +1,7 @@
 [project]
-dependencies = []
+dependencies = [
+    "msgspec>=0.18.5",
+]
 description = "Add your description here"
 name = "simple-cli"
 readme = "README.md"

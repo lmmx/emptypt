@@ -1,5 +1,5 @@
 [project]
-dependencies = []
+dependencies = ["argh>=0.30.4"]
 description = "Add your description here"
 name = "argh-cli"
 readme = "README.md"

@@ -11,7 +11,8 @@ import msgspec
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
 from emptypt.errors import EntryptMisconfigurationExit
-from emptypt.interfaces.action_ds import DocstringActionConfig
+
+from .interface import DocstringActionConfig
 
 __all__ = ("run_cli",)
 

@@ -1,5 +1,8 @@
 [project]
-dependencies = []
+dependencies = [
+    "click>=8.1.7",
+    "msgspec>=0.18.5",
+]
 description = "Add your description here"
 name = "click-cli"
 readme = "README.md"

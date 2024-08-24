@@ -6,7 +6,8 @@ from msgspec import ValidationError
 
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
-from emptypt.interfaces.action import ActionConfig
+
+from .interface import ActionConfig
 
 __all__ = ("run_cli",)
 

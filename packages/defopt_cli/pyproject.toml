@@ -1,5 +1,8 @@
 [project]
-dependencies = []
+dependencies = [
+    "defopt>=6.4.0",
+    "msgspec>=0.18.5",
+]
 description = "Add your description here"
 name = "defopt-cli"
 readme = "README.md"

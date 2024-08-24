@@ -16,13 +16,7 @@ classifiers = [
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries",
 ]
-dependencies = [
-    "argh>=0.30.4",
-    "click>=8.1.7",
-    "defopt>=6.4.0",
-    "msgspec>=0.18.5",
-    "typer>=0.9.0",
-]
+dependencies = []
 description = "Git diff handling in Python."
 dynamic = ["version"]
 keywords = [
@@ -34,15 +28,6 @@ license = {text = "MIT"}
 name = "emptypt"
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
-
-[project.scripts]
-emptypt-argh = "emptypt.cli.argh_cli:run_cli"
-emptypt-argh-docstr = "emptypt.cli.argh_ds_cli:run_cli"
-emptypt-click = "emptypt.cli.click_cli:run_cli"
-emptypt-defopt = "emptypt.cli.defopt_cli:run_cli"
-emptypt-minimum = "emptypt.core.minimal_op:bar"
-emptypt-simple = "emptypt.core.action:foo"
-emptypt-typer = "emptypt.cli.typer_cli:run_cli"
 
 [project.urls]
 Homepage = "https://github.com/lmmx/emptypt"

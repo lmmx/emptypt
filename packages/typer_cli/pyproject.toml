@@ -1,5 +1,8 @@
 [project]
-dependencies = []
+dependencies = [
+    "msgspec>=0.18.5",
+    "typer>=0.9.0",
+]
 description = "Add your description here"
 name = "typer-cli"
 readme = "README.md"
