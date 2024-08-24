@@ -68,18 +68,17 @@ test = [
     "pytest>=7.4.0",
 ]
 
-[tool.ruff]
-ignore = ["C408", "C901", "E501", "E741"]
-ignore-init-module-imports = true
-select = ["C", "E", "F", "I", "W"]
-
 [tool.ruff.isort]
 lines-after-imports = 2
+
+[tool.ruff.lint]
+ignore = ["C408", "C901", "E501", "E741"]
+select = ["C", "E", "F", "I", "W"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["emptypt"]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 # Ignore `E401` (unused imports) in all `__init__.py` files.
 "__init__.py" = ["E401"]
 

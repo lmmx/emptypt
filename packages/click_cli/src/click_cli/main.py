@@ -45,7 +45,8 @@ def run_cli(io_arg1, filter_arg1, quiet, debug) -> None:
     except ValidationError as ve:
         handle_validation_error(ve)
         with CaptureInvalidConfigExit():
-            configure(argv=["-h"])
+            raise NotImplementedError("TODO: make this show help text")
+            pass  # configure(argv=["-h"])
     else:
         _ = foo(config)
         return None
