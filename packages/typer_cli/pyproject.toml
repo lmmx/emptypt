@@ -17,4 +17,3 @@ known_first_party = ["typer_cli"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["typer_cli"]
-

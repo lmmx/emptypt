@@ -1,5 +1,4 @@
 from sys import stderr
-from pysnooper import snoop
 from textwrap import indent
 
 import click
