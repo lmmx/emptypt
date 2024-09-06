@@ -1,0 +1,18 @@
+[project]
+dependencies = [
+    "msgspec>=0.18.5",
+]
+description = "Add your description here"
+name = "argh-ds-cli"
+readme = "README.md"
+requires-python = ">=3.10, <3.12"
+version = "0.1.0"
+
+[project.scripts]
+emptypt-argh-docstr = "argh_ds_cli.main:run_cli"
+
+[tool.lint.isort]
+known_first_party = ["argh_ds_cli"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["argh_ds_cli"]
