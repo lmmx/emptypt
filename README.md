@@ -20,7 +20,7 @@ uv pip install .
 
 ## Timing Benchmarks
 
-Desktop (3.7 GHz - 5.3 GHz, 20 cores)
+Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
 
 | Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
 |:---------------------------|-----------------:|:----------------|:--------------------------:|
@@ -31,7 +31,7 @@ Desktop (3.7 GHz - 5.3 GHz, 20 cores)
 | msgspec + typer            |           0.088s | emptypt-typer   |             -              |
 | msgspec + defopt           |           0.162s | emptypt-defopt  |            Yes             |
 
-Laptop: ThinkPad P14s (2.2 GHz - 5 GHz, 16 cores)
+Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
 | Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
 |:---------------------------|-----------------:|:----------------|:--------------------------:|
@@ -42,7 +42,7 @@ Laptop: ThinkPad P14s (2.2 GHz - 5 GHz, 16 cores)
 | msgspec + typer            |           0.236s | emptypt-typer   |             -              |
 | msgspec + defopt           |           0.176s | emptypt-defopt  |            Yes             |
 
-Laptop: GPD Win Max 2 2023 (3.3 GHz - 5.1 GHz)
+Laptop: GPD Win Max 2 2023 (3.3 GHz, max. 5.1 GHz)
 
 | Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
 |:---------------------------|-----------------:|:----------------|:--------------------------:|
@@ -53,16 +53,16 @@ Laptop: GPD Win Max 2 2023 (3.3 GHz - 5.1 GHz)
 | msgspec + typer            |           0.411s | emptypt-typer   |             -              |
 | msgspec + defopt           |           0.234s | emptypt-defopt  |            Yes             |
 
-Laptop (1.1 GHz)
+Laptop: Lenovo IdeaPad Flex 3 (1.1 GHz, max. 3.1 GHz)
 
-| Configuration               | Execution Time | entrypoint       | Autogenerate from config  |
-|-----------------------------|----------------|------------------|---------------------------|
-| Stdlib [baseline]           | 0.038s         | emptypt-minimum  | -                         |
-| msgspec                     | 0.110s         | emptypt-simple   | -                         |
-| msgspec + argh (docstring)  | 0.145s         | emptypt-argh     | Yes                       |
-| msgspec + click             | 0.180s         | emptypt-click    | No                        |
-| msgspec + typer             | 0.235s         | emptypt-typer    | No                        |
-| msgspec + defopt            | 0.440s         | emptypt-defopt   | Yes                       |
+| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
+|:---------------------------|-----------------:|:----------------|:--------------------------:|
+| Stdlib [baseline]          |           0.036s | emptypt-minimum |             -              |
+| msgspec                    |           0.038s | emptypt-simple  |             -              |
+| msgspec + argh (docstring) |           0.147s | emptypt-argh    |            Yes             |
+| msgspec + click            |           0.183s | emptypt-click   |             -              |
+| msgspec + typer            |           0.242s | emptypt-typer   |             -              |
+| msgspec + defopt           |           0.454s | emptypt-defopt  |            Yes             |
 
 ## Details
 
