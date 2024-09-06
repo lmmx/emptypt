@@ -19,12 +19,12 @@ def run_command(command):
 
 def benchmark_entrypoints():
     configurations = [
-        ("Stdlib [baseline]", "emptypt-minimum", False),
-        ("msgspec", "emptypt-simple", False),
-        ("msgspec + argh (docstring)", "emptypt-argh", True),
-        ("msgspec + click", "emptypt-click", False),
-        ("msgspec + typer", "emptypt-typer", False),
-        ("msgspec + defopt", "emptypt-defopt", True),
+        ("Stdlib [baseline]", "emptypt-m-minimum", False),
+        ("msgspec", "emptypt-m-simple", False),
+        ("msgspec + argh (docstring)", "emptypt-m-argh", True),
+        ("msgspec + click", "emptypt-m-click", False),
+        ("msgspec + typer", "emptypt-m-typer", False),
+        ("msgspec + defopt", "emptypt-m-defopt", True),
     ]
 
     results = []

@@ -22,47 +22,47 @@ uv pip install .
 
 Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
 
-| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
-|:---------------------------|-----------------:|:----------------|:--------------------------:|
-| Stdlib [baseline]          |           0.014s | emptypt-minimum |             -              |
-| msgspec                    |           0.014s | emptypt-simple  |             -              |
-| msgspec + argh (docstring) |           0.054s | emptypt-argh    |            Yes             |
-| msgspec + click            |           0.067s | emptypt-click   |             -              |
-| msgspec + typer            |           0.088s | emptypt-typer   |             -              |
-| msgspec + defopt           |           0.162s | emptypt-defopt  |            Yes             |
+| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
+|:---------------------------|-----------------:|:------------------|:--------------------------:|
+| Stdlib [baseline]          |           0.014s | emptypt-m-minimum |             -              |
+| msgspec                    |           0.014s | emptypt-m-simple  |             -              |
+| msgspec + argh (docstring) |           0.054s | emptypt-m-argh    |            Yes             |
+| msgspec + click            |           0.067s | emptypt-m-click   |             -              |
+| msgspec + typer            |           0.088s | emptypt-m-typer   |             -              |
+| msgspec + defopt           |           0.162s | emptypt-m-defopt  |            Yes             |
 
 Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
-| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
-|:---------------------------|-----------------:|:----------------|:--------------------------:|
-| Stdlib [baseline]          |           0.018s | emptypt-minimum |             -              |
-| msgspec                    |           0.018s | emptypt-simple  |             -              |
-| msgspec + argh (docstring) |           0.066s | emptypt-argh    |            Yes             |
-| msgspec + click            |           0.077s | emptypt-click   |             -              |
-| msgspec + typer            |           0.236s | emptypt-typer   |             -              |
-| msgspec + defopt           |           0.176s | emptypt-defopt  |            Yes             |
+| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
+|:---------------------------|-----------------:|:------------------|:--------------------------:|
+| Stdlib [baseline]          |           0.018s | emptypt-m-minimum |             -              |
+| msgspec                    |           0.018s | emptypt-m-simple  |             -              |
+| msgspec + argh (docstring) |           0.066s | emptypt-m-argh    |            Yes             |
+| msgspec + click            |           0.077s | emptypt-m-click   |             -              |
+| msgspec + typer            |           0.236s | emptypt-m-typer   |             -              |
+| msgspec + defopt           |           0.176s | emptypt-m-defopt  |            Yes             |
 
 Laptop: GPD Win Max 2 2023 (3.3 GHz, max. 5.1 GHz)
 
-| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
-|:---------------------------|-----------------:|:----------------|:--------------------------:|
-| Stdlib [baseline]          |           0.020s | emptypt-minimum |             -              |
-| msgspec                    |           0.021s | emptypt-simple  |             -              |
-| msgspec + argh (docstring) |           0.109s | emptypt-argh    |            Yes             |
-| msgspec + click            |           0.124s | emptypt-click   |             -              |
-| msgspec + typer            |           0.411s | emptypt-typer   |             -              |
-| msgspec + defopt           |           0.234s | emptypt-defopt  |            Yes             |
+| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
+|:---------------------------|-----------------:|:------------------|:--------------------------:|
+| Stdlib [baseline]          |           0.020s | emptypt-m-minimum |             -              |
+| msgspec                    |           0.021s | emptypt-m-simple  |             -              |
+| msgspec + argh (docstring) |           0.109s | emptypt-m-argh    |            Yes             |
+| msgspec + click            |           0.124s | emptypt-m-click   |             -              |
+| msgspec + typer            |           0.411s | emptypt-m-typer   |             -              |
+| msgspec + defopt           |           0.234s | emptypt-m-defopt  |            Yes             |
 
 Laptop: Lenovo IdeaPad Flex 3 (1.1 GHz, max. 3.1 GHz)
 
-| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
-|:---------------------------|-----------------:|:----------------|:--------------------------:|
-| Stdlib [baseline]          |           0.036s | emptypt-minimum |             -              |
-| msgspec                    |           0.038s | emptypt-simple  |             -              |
-| msgspec + argh (docstring) |           0.147s | emptypt-argh    |            Yes             |
-| msgspec + click            |           0.183s | emptypt-click   |             -              |
-| msgspec + typer            |           0.242s | emptypt-typer   |             -              |
-| msgspec + defopt           |           0.454s | emptypt-defopt  |            Yes             |
+| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
+|:---------------------------|-----------------:|:------------------|:--------------------------:|
+| Stdlib [baseline]          |           0.036s | emptypt-m-minimum |             -              |
+| msgspec                    |           0.038s | emptypt-m-simple  |             -              |
+| msgspec + argh (docstring) |           0.147s | emptypt-m-argh    |            Yes             |
+| msgspec + click            |           0.183s | emptypt-m-click   |             -              |
+| msgspec + typer            |           0.242s | emptypt-m-typer   |             -              |
+| msgspec + defopt           |           0.454s | emptypt-m-defopt  |            Yes             |
 
 ## Details
 

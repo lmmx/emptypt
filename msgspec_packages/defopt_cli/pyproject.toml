@@ -10,7 +10,7 @@ requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-defopt = "defopt_cli.main:run_cli"
+emptypt-m-defopt = "defopt_cli.main:run_cli"
 
 [tool.lint.isort]
 known_first_party = ["defopt_cli"]
