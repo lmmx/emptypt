@@ -42,16 +42,16 @@ Laptop: ThinkPad P14s (2.2 GHz - 5 GHz, 16 cores)
 | msgspec + typer            |           0.236s | emptypt-typer   |             -              |
 | msgspec + defopt           |           0.176s | emptypt-defopt  |            Yes             |
 
-Laptop (3.3 GHz)
+Laptop: GPD Win Max 2 2023 (3.3 GHz - 5.1 GHz)
 
-| Configuration               | Execution Time | entrypoint       | Autogenerate from config  |
-|-----------------------------|----------------|------------------|---------------------------|
-| Stdlib [baseline]           | 0.014s         | emptypt-minimum  | -                         |
-| msgspec                     | 0.015s         | emptypt-simple   | -                         |
-| msgspec + argh (docstring)  | 0.075s         | emptypt-argh     | Yes                       |
-| msgspec + click             | 0.099s         | emptypt-click    | No                        |
-| msgspec + typer             | 0.359s         | emptypt-typer    | No                        |
-| msgspec + defopt            | 0.244s         | emptypt-defopt   | Yes                       |
+| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
+|:---------------------------|-----------------:|:----------------|:--------------------------:|
+| Stdlib [baseline]          |           0.020s | emptypt-minimum |             -              |
+| msgspec                    |           0.021s | emptypt-simple  |             -              |
+| msgspec + argh (docstring) |           0.109s | emptypt-argh    |            Yes             |
+| msgspec + click            |           0.124s | emptypt-click   |             -              |
+| msgspec + typer            |           0.411s | emptypt-typer   |             -              |
+| msgspec + defopt           |           0.234s | emptypt-defopt  |            Yes             |
 
 Laptop (1.1 GHz)
 
