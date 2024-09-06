@@ -1,7 +1,19 @@
 version = 1
 requires-python = ">=3.10, <3.12"
 
-[[distribution]]
+[manifest]
+members = [
+    "argh-cli",
+    "argh-ds-cli",
+    "click-cli",
+    "defopt-cli",
+    "emptypt",
+    "emptypt-ws",
+    "simple-cli",
+    "typer-cli",
+]
+
+[[package]]
 name = "argh"
 version = "0.31.3"
 source = { registry = "https://pypi.org/simple" }
@@ -10,23 +22,29 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/d2/52/fcd83710b6f8786df80e5d335882d1b24d1f610f397703e94a6ffb0d6f66/argh-0.31.3-py3-none-any.whl", hash = "sha256:2edac856ff50126f6e47d884751328c9f466bacbbb6cbfdac322053d94705494", size = 44844 },
 ]
 
-[[distribution]]
+[[package]]
 name = "argh-cli"
 version = "0.1.0"
-source = { editable = "packages/argh_cli" }
+source = { virtual = "msgspec_packages/argh_cli" }
 dependencies = [
     { name = "argh" },
 ]
 
-[[distribution]]
+[package.metadata]
+requires-dist = [{ name = "argh", specifier = ">=0.30.4" }]
+
+[[package]]
 name = "argh-ds-cli"
 version = "0.1.0"
-source = { editable = "packages/argh_ds_cli" }
+source = { virtual = "msgspec_packages/argh_ds_cli" }
 dependencies = [
     { name = "msgspec" },
 ]
 
-[[distribution]]
+[package.metadata]
+requires-dist = [{ name = "msgspec", specifier = ">=0.18.5" }]
+
+[[package]]
 name = "click"
 version = "8.1.7"
 source = { registry = "https://pypi.org/simple" }
@@ -38,16 +56,22 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl", hash = "sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28", size = 97941 },
 ]
 
-[[distribution]]
+[[package]]
 name = "click-cli"
 version = "0.1.0"
-source = { editable = "packages/click_cli" }
+source = { virtual = "msgspec_packages/click_cli" }
 dependencies = [
     { name = "click" },
     { name = "msgspec" },
 ]
 
-[[distribution]]
+[package.metadata]
+requires-dist = [
+    { name = "click", specifier = ">=8.1.7" },
+    { name = "msgspec", specifier = ">=0.18.5" },
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -56,7 +80,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335 },
 ]
 
-[[distribution]]
+[[package]]
 name = "defopt"
 version = "6.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -67,16 +91,22 @@ dependencies = [
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/cc/3f/3baf4e6fed12dac76c0ccb4716fd4235ef0aa5b48f66aab6f970afc7b44e/defopt-6.4.0.tar.gz", hash = "sha256:359a56137b4b7dcbc051d2157e6591a09c35c4297cfc00f1ef8dbcd192d19a34", size = 42257 }
 
-[[distribution]]
+[[package]]
 name = "defopt-cli"
 version = "0.1.0"
-source = { editable = "packages/defopt_cli" }
+source = { virtual = "msgspec_packages/defopt_cli" }
 dependencies = [
     { name = "defopt" },
     { name = "msgspec" },
 ]
 
-[[distribution]]
+[package.metadata]
+requires-dist = [
+    { name = "defopt", specifier = ">=6.4.0" },
+    { name = "msgspec", specifier = ">=0.18.5" },
+]
+
+[[package]]
 name = "docutils"
 version = "0.21.2"
 source = { registry = "https://pypi.org/simple" }
@@ -85,8 +115,13 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/d7/9322c609343d929e75e7e5e6255e614fcc67572cfd083959cdef3b7aad79/docutils-0.21.2-py3-none-any.whl", hash = "sha256:dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2", size = 587408 },
 ]
 
-[[distribution]]
+[[package]]
 name = "emptypt"
+version = "0.1.0"
+source = { virtual = "msgspec_packages/emptypt" }
+
+[[package]]
+name = "emptypt-ws"
 version = "0.0.1"
 source = { editable = "." }
 dependencies = [
@@ -94,16 +129,25 @@ dependencies = [
     { name = "argh-ds-cli" },
     { name = "click-cli" },
     { name = "defopt-cli" },
+    { name = "emptypt" },
     { name = "simple-cli" },
+    { name = "tabulate" },
     { name = "typer-cli" },
 ]
 
-[[distribution]]
-name = "emptypt-core"
-version = "0.1.0"
-source = { editable = "packages/emptypt_core" }
+[package.metadata]
+requires-dist = [
+    { name = "argh-cli", virtual = "msgspec_packages/argh_cli" },
+    { name = "argh-ds-cli", virtual = "msgspec_packages/argh_ds_cli" },
+    { name = "click-cli", virtual = "msgspec_packages/click_cli" },
+    { name = "defopt-cli", virtual = "msgspec_packages/defopt_cli" },
+    { name = "emptypt", virtual = "msgspec_packages/emptypt" },
+    { name = "simple-cli", virtual = "msgspec_packages/simple_cli" },
+    { name = "tabulate", specifier = ">=0.9.0" },
+    { name = "typer-cli", virtual = "msgspec_packages/typer_cli" },
+]
 
-[[distribution]]
+[[package]]
 name = "markdown-it-py"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -115,7 +159,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/42/d7/1ec15b46af6af88f19b8e5ffea08fa375d433c998b8a7639e76935c14f1f/markdown_it_py-3.0.0-py3-none-any.whl", hash = "sha256:355216845c60bd96232cd8d8c40e8f9765cc86f46880e43a8fd22dc1a1a8cab1", size = 87528 },
 ]
 
-[[distribution]]
+[[package]]
 name = "mdurl"
 version = "0.1.2"
 source = { registry = "https://pypi.org/simple" }
@@ -124,7 +168,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979 },
 ]
 
-[[distribution]]
+[[package]]
 name = "msgspec"
 version = "0.18.6"
 source = { registry = "https://pypi.org/simple" }
@@ -153,7 +197,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/3f/76/30d8f152299f65c85c46a2cbeaf95ad1d18516b5ce730acdaef696d4cfe6/msgspec-0.18.6-cp312-cp312-win_amd64.whl", hash = "sha256:1003c20bfe9c6114cc16ea5db9c5466e49fae3d7f5e2e59cb70693190ad34da0", size = 187184 },
 ]
 
-[[distribution]]
+[[package]]
 name = "pockets"
 version = "0.9.1"
 source = { registry = "https://pypi.org/simple" }
@@ -165,7 +209,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e9/2f/a4583c70fbd8cd04910e2884bcc2bdd670e884061f7b4d70bc13e632a993/pockets-0.9.1-py2.py3-none-any.whl", hash = "sha256:68597934193c08a08eb2bf6a1d85593f627c22f9b065cc727a4f03f669d96d86", size = 26263 },
 ]
 
-[[distribution]]
+[[package]]
 name = "pygments"
 version = "2.18.0"
 source = { registry = "https://pypi.org/simple" }
@@ -174,7 +218,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/f7/3f/01c8b82017c199075f8f788d0d906b9ffbbc5a47dc9918a945e13d5a2bda/pygments-2.18.0-py3-none-any.whl", hash = "sha256:b8e6aca0523f3ab76fee51799c488e38782ac06eafcf95e7ba832985c8e7b13a", size = 1205513 },
 ]
 
-[[distribution]]
+[[package]]
 name = "rich"
 version = "13.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -187,7 +231,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/87/67/a37f6214d0e9fe57f6ae54b2956d550ca8365857f42a1ce0392bb21d9410/rich-13.7.1-py3-none-any.whl", hash = "sha256:4edbae314f59eb482f54e9e30bf00d33350aaa94f4bfcd4e9e3110e64d0d7222", size = 240681 },
 ]
 
-[[distribution]]
+[[package]]
 name = "shellingham"
 version = "1.5.4"
 source = { registry = "https://pypi.org/simple" }
@@ -196,15 +240,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl", hash = "sha256:7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686", size = 9755 },
 ]
 
-[[distribution]]
+[[package]]
 name = "simple-cli"
 version = "0.1.0"
-source = { editable = "packages/simple_cli" }
+source = { virtual = "msgspec_packages/simple_cli" }
 dependencies = [
     { name = "msgspec" },
 ]
 
-[[distribution]]
+[package.metadata]
+requires-dist = [{ name = "msgspec", specifier = ">=0.18.5" }]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 source = { registry = "https://pypi.org/simple" }
@@ -213,7 +260,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254", size = 11053 },
 ]
 
-[[distribution]]
+[[package]]
 name = "sphinxcontrib-napoleon"
 version = "0.7"
 source = { registry = "https://pypi.org/simple" }
@@ -226,7 +273,16 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/75/f2/6b7627dfe7b4e418e295e254bb15c3a6455f11f8c0ad0d43113f678049c3/sphinxcontrib_napoleon-0.7-py2.py3-none-any.whl", hash = "sha256:711e41a3974bdf110a484aec4c1a556799eb0b3f3b897521a018ad7e2db13fef", size = 17151 },
 ]
 
-[[distribution]]
+[[package]]
+name = "tabulate"
+version = "0.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz", hash = "sha256:0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c", size = 81090 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl", hash = "sha256:024ca478df22e9340661486f85298cff5f6dcdba14f3813e8830015b9ed1948f", size = 35252 },
+]
+
+[[package]]
 name = "typer"
 version = "0.12.4"
 source = { registry = "https://pypi.org/simple" }
@@ -241,16 +297,22 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ae/cc/15083dcde1252a663398b1b2a173637a3ec65adadfb95137dc95df1e6adc/typer-0.12.4-py3-none-any.whl", hash = "sha256:819aa03699f438397e876aa12b0d63766864ecba1b579092cc9fe35d886e34b6", size = 47402 },
 ]
 
-[[distribution]]
+[[package]]
 name = "typer-cli"
 version = "0.1.0"
-source = { editable = "packages/typer_cli" }
+source = { virtual = "msgspec_packages/typer_cli" }
 dependencies = [
     { name = "msgspec" },
     { name = "typer" },
 ]
 
-[[distribution]]
+[package.metadata]
+requires-dist = [
+    { name = "msgspec", specifier = ">=0.18.5" },
+    { name = "typer", specifier = ">=0.9.0" },
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.12.2"
 source = { registry = "https://pypi.org/simple" }

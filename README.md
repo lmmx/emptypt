@@ -6,9 +6,11 @@ Template for an entrypoint CLI using msgspec
 
 This repo has been refactored as a [uv workspace][uvws] in August 2024.
 
-Each CLI is a standalone package, and there's also a package called `emptypt` (all in the packages
-subdirectory). To install all CLI packages (each of which exposes entrypoints in its
-`pyproject.toml` project scripts section) and therefore to obtain all CLI commands, run:
+Each CLI is a standalone package, and there's also a package called `emptypt` (all in the
+`msgspec_packages` subdirectory).
+
+To install all CLI packages (each of which exposes entrypoints in its `pyproject.toml`
+project scripts section) and therefore to obtain all CLI commands, run:
 
 ```sh
 uv pip install .
@@ -20,14 +22,14 @@ uv pip install .
 
 Desktop
 
-| Configuration               | Execution Time | entrypoint       | Autogenerate from config  |
-|-----------------------------|----------------|------------------|---------------------------|
-| Stdlib [baseline]           | 0.019s         | emptypt-minimum  | -                         |
-| msgspec                     | 0.046s         | emptypt-simple   | -                         |
-| msgspec + argh (docstring)  | 0.060s         | emptypt-argh     | Yes                       |
-| msgspec + click             | 0.075s         | emptypt-click    | No                        |
-| msgspec + typer             | 0.094s         | emptypt-typer    | No                        |
-| msgspec + defopt            | 0.175s         | emptypt-defopt   | Yes                       |
+| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
+|:---------------------------|-----------------:|:----------------|:--------------------------:|
+| Stdlib [baseline]          |           0.014s | emptypt-minimum |             -              |
+| msgspec                    |           0.014s | emptypt-simple  |             -              |
+| msgspec + argh (docstring) |           0.054s | emptypt-argh    |            Yes             |
+| msgspec + click            |           0.067s | emptypt-click   |             -              |
+| msgspec + typer            |           0.088s | emptypt-typer   |             -              |
+| msgspec + defopt           |           0.162s | emptypt-defopt  |            Yes             |
 
 Laptop (3.3 GHz)
 
