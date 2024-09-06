@@ -1,7 +1,7 @@
 [project]
 dependencies = [
     "click>=8.1.7",
-    "msgspec>=0.18.5",
+    "pydantic>=2.9.0",
 ]
 description = "Add your description here"
 name = "click-cli"

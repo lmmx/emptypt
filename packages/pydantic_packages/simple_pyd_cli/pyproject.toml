@@ -1,6 +1,6 @@
 [project]
 dependencies = [
-    "msgspec>=0.18.5",
+    "pydantic>=2.9.0",
 ]
 description = "Add your description here"
 name = "simple-cli"
