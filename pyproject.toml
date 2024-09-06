@@ -16,29 +16,25 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-    "argh-cli",
-    "argh-ds-cli",
-    "click-cli",
-    "defopt-cli",
     "emptypt",
-    "simple-cli",
+    "argh-msg-cli",
+    "argh-ds-msg-cli",
+    "click-msg-cli",
+    "defopt-msg-cli",
+    "simple-msg-cli",
     "tabulate>=0.9.0",
-    "typer-cli",
 ]
 description = "Benchmarking Python package entrypoint latency."
-dynamic = ["version"]
 keywords = ["CLI", "benchmarking", "entrypoint", "latency"]
 license = {text = "MIT"}
 name = "emptypt_ws"
 readme = "README.md"
 requires-python = ">=3.10,<3.12"
+version = "0.0.1"
 
 [project.urls]
 Homepage = "https://github.com/lmmx/emptypt"
 Repository = "https://github.com/lmmx/emptypt.git"
-
-[tool.pdm]
-version = {path = "version.py", source = "file"}
 
 [tool.pdm.dev-dependencies]
 test = [
@@ -59,28 +55,17 @@ spaces_before_inline_comment = 2  # Match Python PEP 8
 spaces_indent_inline_array = 4  # Match Python PEP 8
 trailing_comma_inline_array = true
 
-[tool.uv.sources]
-argh-cli = {workspace = true}
-argh-ds-cli = {workspace = true}
-argh_cli = {workspace = true}
-argh_ds_cli = {workspace = true}
-click-cli = {workspace = true}
-click_cli = {workspace = true}
-defopt-cli = {workspace = true}
-defopt_cli = {workspace = true}
-emptypt = {workspace = true}
-simple-cli = {workspace = true}
-simple_cli = {workspace = true}
-typer-cli = {workspace = true}
-typer_cli = {workspace = true}
-
 [tool.uv.workspace]
 members = [
-    "msgspec_packages/argh_cli",
-    "msgspec_packages/argh_ds_cli",
-    "msgspec_packages/click_cli",
-    "msgspec_packages/defopt_cli",
-    "msgspec_packages/emptypt",
-    "msgspec_packages/simple_cli",
-    "msgspec_packages/typer_cli",
+    "packages/emptypt",
+    "packages/msgspec_packages/*",
+    # "packages/pydantic_packages/*",
 ]
+
+[tool.uv.sources]
+emptypt = { workspace = true }
+argh-msg-cli = { workspace = true }
+argh-ds-msg-cli = { workspace = true }
+click-msg-cli = { workspace = true }
+defopt-msg-cli = { workspace = true }
+simple-msg-cli = { workspace = true }

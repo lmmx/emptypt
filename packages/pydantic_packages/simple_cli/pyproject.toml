@@ -1,19 +1,19 @@
 [project]
 dependencies = [
-    "defopt>=6.4.0",
     "msgspec>=0.18.5",
 ]
 description = "Add your description here"
-name = "defopt-cli"
+name = "simple-cli"
 readme = "README.md"
 requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-m-defopt = "defopt_cli.main:run_cli"
+emptypt-p-minimum = "simple_cli.minimal_op:bar"
+emptypt-p-simple = "simple_cli.action:foo"
 
 [tool.lint.isort]
-known_first_party = ["defopt_cli"]
+known_first_party = ["simple_cli"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["defopt_cli"]
+known-first-party = ["simple_cli"]

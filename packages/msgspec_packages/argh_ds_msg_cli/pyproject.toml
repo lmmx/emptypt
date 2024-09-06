@@ -3,17 +3,16 @@ dependencies = [
     "msgspec>=0.18.5",
 ]
 description = "Add your description here"
-name = "simple-cli"
+name = "argh-ds-msg-cli"
 readme = "README.md"
 requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-m-minimum = "simple_cli.minimal_op:bar"
-emptypt-m-simple = "simple_cli.action:foo"
+emptypt-m-argh-docstr = "argh_ds_msg_cli.main:run_msg_cli"
 
 [tool.lint.isort]
-known_first_party = ["simple_cli"]
+known_first_party = ["argh_ds_msg_cli"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["simple_cli"]
+known-first-party = ["argh_ds_msg_cli"]

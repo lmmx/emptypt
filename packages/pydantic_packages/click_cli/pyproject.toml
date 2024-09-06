@@ -1,19 +1,19 @@
 [project]
 dependencies = [
+    "click>=8.1.7",
     "msgspec>=0.18.5",
-    "typer>=0.9.0",
 ]
 description = "Add your description here"
-name = "typer-cli"
+name = "click-cli"
 readme = "README.md"
 requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-typer = "typer_cli.main:run_cli"
+emptypt-p-click = "click_cli.main:run_cli"
 
 [tool.lint.isort]
-known_first_party = ["typer_cli"]
+known_first_party = ["click_cli"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["typer_cli"]
+known-first-party = ["click_cli"]

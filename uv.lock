@@ -3,14 +3,15 @@ requires-python = ">=3.10, <3.12"
 
 [manifest]
 members = [
-    "argh-cli",
-    "argh-ds-cli",
-    "click-cli",
-    "defopt-cli",
+    "argh-ds-msg-cli",
+    "argh-msg-cli",
+    "click-msg-cli",
+    "defopt-msg-cli",
     "emptypt",
     "emptypt-ws",
-    "simple-cli",
-    "typer-cli",
+    "foo",
+    "simple-msg-cli",
+    "typer-msg-cli",
 ]
 
 [[package]]
@@ -23,26 +24,26 @@ wheels = [
 ]
 
 [[package]]
-name = "argh-cli"
+name = "argh-ds-msg-cli"
 version = "0.1.0"
-source = { virtual = "msgspec_packages/argh_cli" }
-dependencies = [
-    { name = "argh" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "argh", specifier = ">=0.30.4" }]
-
-[[package]]
-name = "argh-ds-cli"
-version = "0.1.0"
-source = { virtual = "msgspec_packages/argh_ds_cli" }
+source = { virtual = "msgspec_packages/argh_ds_msg_cli" }
 dependencies = [
     { name = "msgspec" },
 ]
 
 [package.metadata]
 requires-dist = [{ name = "msgspec", specifier = ">=0.18.5" }]
+
+[[package]]
+name = "argh-msg-cli"
+version = "0.1.0"
+source = { virtual = "msgspec_packages/argh_msg_cli" }
+dependencies = [
+    { name = "argh" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "argh", specifier = ">=0.30.4" }]
 
 [[package]]
 name = "click"
@@ -57,9 +58,9 @@ wheels = [
 ]
 
 [[package]]
-name = "click-cli"
+name = "click-msg-cli"
 version = "0.1.0"
-source = { virtual = "msgspec_packages/click_cli" }
+source = { virtual = "msgspec_packages/click_msg_cli" }
 dependencies = [
     { name = "click" },
     { name = "msgspec" },
@@ -92,9 +93,9 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/cc/3f/3baf4e6fed12dac76c0ccb4716fd4235ef0aa5b48f66aab6f970afc7b44e/defopt-6.4.0.tar.gz", hash = "sha256:359a56137b4b7dcbc051d2157e6591a09c35c4297cfc00f1ef8dbcd192d19a34", size = 42257 }
 
 [[package]]
-name = "defopt-cli"
+name = "defopt-msg-cli"
 version = "0.1.0"
-source = { virtual = "msgspec_packages/defopt_cli" }
+source = { virtual = "msgspec_packages/defopt_msg_cli" }
 dependencies = [
     { name = "defopt" },
     { name = "msgspec" },
@@ -125,27 +126,28 @@ name = "emptypt-ws"
 version = "0.0.1"
 source = { editable = "." }
 dependencies = [
-    { name = "argh-cli" },
-    { name = "argh-ds-cli" },
-    { name = "click-cli" },
-    { name = "defopt-cli" },
+    { name = "argh-ds-msg-cli" },
+    { name = "argh-msg-cli" },
+    { name = "click-msg-cli" },
+    { name = "defopt-msg-cli" },
     { name = "emptypt" },
-    { name = "simple-cli" },
-    { name = "tabulate" },
-    { name = "typer-cli" },
+    { name = "simple-msg-cli" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "argh-cli", virtual = "msgspec_packages/argh_cli" },
-    { name = "argh-ds-cli", virtual = "msgspec_packages/argh_ds_cli" },
-    { name = "click-cli", virtual = "msgspec_packages/click_cli" },
-    { name = "defopt-cli", virtual = "msgspec_packages/defopt_cli" },
+    { name = "argh-ds-msg-cli", virtual = "msgspec_packages/argh_ds_msg_cli" },
+    { name = "argh-msg-cli", virtual = "msgspec_packages/argh_msg_cli" },
+    { name = "click-msg-cli", virtual = "msgspec_packages/click_msg_cli" },
+    { name = "defopt-msg-cli", virtual = "msgspec_packages/defopt_msg_cli" },
     { name = "emptypt", virtual = "msgspec_packages/emptypt" },
-    { name = "simple-cli", virtual = "msgspec_packages/simple_cli" },
-    { name = "tabulate", specifier = ">=0.9.0" },
-    { name = "typer-cli", virtual = "msgspec_packages/typer_cli" },
+    { name = "simple-msg-cli", virtual = "msgspec_packages/simple_msg_cli" },
 ]
+
+[[package]]
+name = "foo"
+version = "0.1.0"
+source = { virtual = "msgspec_packages/foo" }
 
 [[package]]
 name = "markdown-it-py"
@@ -220,15 +222,15 @@ wheels = [
 
 [[package]]
 name = "rich"
-version = "13.7.1"
+version = "13.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "markdown-it-py" },
     { name = "pygments" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz", hash = "sha256:9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432", size = 221248 }
+sdist = { url = "https://files.pythonhosted.org/packages/cf/60/5959113cae0ce512cf246a6871c623117330105a0d5f59b4e26138f2c9cc/rich-13.8.0.tar.gz", hash = "sha256:a5ac1f1cd448ade0d59cc3356f7db7a7ccda2c8cbae9c7a90c28ff463d3e91f4", size = 222072 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/87/67/a37f6214d0e9fe57f6ae54b2956d550ca8365857f42a1ce0392bb21d9410/rich-13.7.1-py3-none-any.whl", hash = "sha256:4edbae314f59eb482f54e9e30bf00d33350aaa94f4bfcd4e9e3110e64d0d7222", size = 240681 },
+    { url = "https://files.pythonhosted.org/packages/c7/d9/c2a126eeae791e90ea099d05cb0515feea3688474b978343f3cdcfe04523/rich-13.8.0-py3-none-any.whl", hash = "sha256:2e85306a063b9492dffc86278197a60cbece75bcb766022f3436f567cae11bdc", size = 241597 },
 ]
 
 [[package]]
@@ -241,9 +243,9 @@ wheels = [
 ]
 
 [[package]]
-name = "simple-cli"
+name = "simple-msg-cli"
 version = "0.1.0"
-source = { virtual = "msgspec_packages/simple_cli" }
+source = { virtual = "msgspec_packages/simple_msg_cli" }
 dependencies = [
     { name = "msgspec" },
 ]
@@ -274,17 +276,8 @@ wheels = [
 ]
 
 [[package]]
-name = "tabulate"
-version = "0.9.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz", hash = "sha256:0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c", size = 81090 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl", hash = "sha256:024ca478df22e9340661486f85298cff5f6dcdba14f3813e8830015b9ed1948f", size = 35252 },
-]
-
-[[package]]
 name = "typer"
-version = "0.12.4"
+version = "0.12.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -292,15 +285,15 @@ dependencies = [
     { name = "shellingham" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d4/f7/f174a1cae84848ae8b27170a96187b91937b743f0580ff968078fe16930a/typer-0.12.4.tar.gz", hash = "sha256:c9c1613ed6a166162705b3347b8d10b661ccc5d95692654d0fb628118f2c34e6", size = 97945 }
+sdist = { url = "https://files.pythonhosted.org/packages/c5/58/a79003b91ac2c6890fc5d90145c662fd5771c6f11447f116b63300436bc9/typer-0.12.5.tar.gz", hash = "sha256:f592f089bedcc8ec1b974125d64851029c3b1af145f04aca64d69410f0c9b722", size = 98953 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ae/cc/15083dcde1252a663398b1b2a173637a3ec65adadfb95137dc95df1e6adc/typer-0.12.4-py3-none-any.whl", hash = "sha256:819aa03699f438397e876aa12b0d63766864ecba1b579092cc9fe35d886e34b6", size = 47402 },
+    { url = "https://files.pythonhosted.org/packages/a8/2b/886d13e742e514f704c33c4caa7df0f3b89e5a25ef8db02aa9ca3d9535d5/typer-0.12.5-py3-none-any.whl", hash = "sha256:62fe4e471711b147e3365034133904df3e235698399bc4de2b36c8579298d52b", size = 47288 },
 ]
 
 [[package]]
-name = "typer-cli"
+name = "typer-msg-cli"
 version = "0.1.0"
-source = { virtual = "msgspec_packages/typer_cli" }
+source = { virtual = "msgspec_packages/typer_msg_cli" }
 dependencies = [
     { name = "msgspec" },
     { name = "typer" },
