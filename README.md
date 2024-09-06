@@ -20,7 +20,7 @@ uv pip install .
 
 ## Timing Benchmarks
 
-Desktop
+Desktop (3.7 GHz - 5.3 GHz, 20 cores)
 
 | Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
 |:---------------------------|-----------------:|:----------------|:--------------------------:|
@@ -30,6 +30,17 @@ Desktop
 | msgspec + click            |           0.067s | emptypt-click   |             -              |
 | msgspec + typer            |           0.088s | emptypt-typer   |             -              |
 | msgspec + defopt           |           0.162s | emptypt-defopt  |            Yes             |
+
+Laptop: ThinkPad P14s (2.2 GHz - 5 GHz, 16 cores)
+
+| Configuration              |   Execution Time | entrypoint      |  Autogenerate from config  |
+|:---------------------------|-----------------:|:----------------|:--------------------------:|
+| Stdlib [baseline]          |           0.018s | emptypt-minimum |             -              |
+| msgspec                    |           0.018s | emptypt-simple  |             -              |
+| msgspec + argh (docstring) |           0.066s | emptypt-argh    |            Yes             |
+| msgspec + click            |           0.077s | emptypt-click   |             -              |
+| msgspec + typer            |           0.236s | emptypt-typer   |             -              |
+| msgspec + defopt           |           0.176s | emptypt-defopt  |            Yes             |
 
 Laptop (3.3 GHz)
 
