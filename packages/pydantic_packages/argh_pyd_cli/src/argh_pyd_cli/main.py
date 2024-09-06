@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from argparse import ArgumentParser
 from collections.abc import Callable
-from typing import Annotated, get_args, get_origin, get_type_hints
+from typing import Annotated, get_args, get_origin, get_type_hints, TypeVar
 
 import argh
-import msgspec
+from pydantic import BaseModel
 
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
@@ -15,6 +15,7 @@ from .interface import ActionConfig
 
 __all__ = ("run_cli",)
 
+M = TypeVar("M", bound=BaseModel)
 
 def stringify_hint(type_hint) -> str:
     match type_hint:
@@ -25,22 +26,13 @@ def stringify_hint(type_hint) -> str:
     return hint
 
 
-def populate_parser_descriptions(parser: ArgumentParser, struct: Callable) -> None:
-    hints = get_type_hints(struct, include_extras=True)
+def populate_parser_descriptions(parser: ArgumentParser, model: type[M]) -> None:
+    hints = get_type_hints(model, include_extras=True)
     for action in parser._actions:
-        if (flag := action.dest) in struct.__struct_fields__:
-            if get_origin(hints[flag]) is Annotated:
-                type_hint, meta = get_args(hints[flag])
-                hint = stringify_hint(type_hint)
-                desc = meta.description + " "
-            else:
-                # If the type is unannotated no meta so no description
-                hint = stringify_hint(hints[flag])
-                desc = ""
-            match action.default:
-                case msgspec._core.Factory() as factory_manager:
-                    # The msgspec default factory didn't get instantiated by argh
-                    action.default = factory_manager.factory()
+        if (flag := action.dest) in model.model_fields:
+            field = model.model_fields[flag]
+            hint = stringify_hint(hints[flag])
+            desc = (field.description or "") + " "
             action.help = f"{desc}(type: {hint}, default: {action.default})"
 
 

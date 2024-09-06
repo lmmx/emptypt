@@ -1,3 +1,7 @@
+[build-system]
+build-backend = "pdm.backend"
+requires = ["pdm-backend"]
+
 [project]
 dependencies = []
 description = "Add your description here"
