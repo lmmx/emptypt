@@ -17,12 +17,17 @@ classifiers = [
 ]
 dependencies = [
     "emptypt",
+    "tabulate>=0.9.0",
     "argh-msg-cli",
     "argh-ds-msg-cli",
     "click-msg-cli",
     "defopt-msg-cli",
     "simple-msg-cli",
-    "tabulate>=0.9.0",
+    "argh-ds-pyd-cli",
+    "argh-pyd-cli",
+    "click-pyd-cli",
+    "defopt-pyd-cli",
+    "simple-pyd-cli",
 ]
 description = "Benchmarking Python package entrypoint latency."
 keywords = ["CLI", "benchmarking", "entrypoint", "latency"]
@@ -59,7 +64,7 @@ trailing_comma_inline_array = true
 members = [
     "packages/emptypt",
     "packages/msgspec_packages/*",
-    # "packages/pydantic_packages/*",
+    "packages/pydantic_packages/*",
 ]
 
 [tool.uv.sources]
@@ -69,3 +74,9 @@ argh-ds-msg-cli = { workspace = true }
 click-msg-cli = { workspace = true }
 defopt-msg-cli = { workspace = true }
 simple-msg-cli = { workspace = true }
+argh-ds-cli = { workspace = true }
+argh-ds-pyd-cli = { workspace = true }
+argh-pyd-cli = { workspace = true }
+click-pyd-cli = { workspace = true }
+defopt-pyd-cli = { workspace = true }
+simple-pyd-cli = { workspace = true }

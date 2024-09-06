@@ -9,7 +9,7 @@ requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-m-argh-docstr = "argh_ds_msg_cli.main:run_msg_cli"
+emptypt-m-argh-docstr = "argh_ds_msg_cli.main:run_cli"
 
 [tool.lint.isort]
 known_first_party = ["argh_ds_msg_cli"]
