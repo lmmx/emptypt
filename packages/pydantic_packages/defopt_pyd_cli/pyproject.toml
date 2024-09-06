@@ -1,19 +1,19 @@
 [project]
 dependencies = [
-    "click>=8.1.7",
+    "defopt>=6.4.0",
     "msgspec>=0.18.5",
 ]
 description = "Add your description here"
-name = "click-cli"
+name = "defopt-cli"
 readme = "README.md"
 requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-p-click = "click_cli.main:run_cli"
+emptypt-p-defopt = "defopt_pyd_cli.main:run_pyd_cli"
 
 [tool.lint.isort]
-known_first_party = ["click_cli"]
+known_first_party = ["defopt_pyd_cli"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["click_cli"]
+known-first-party = ["defopt_pyd_cli"]

@@ -7,10 +7,10 @@ requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-p-argh = "argh_cli.main:run_cli"
+emptypt-p-argh = "argh_pyd_cli.main:run_pyd_cli"
 
 [tool.lint.isort]
-known_first_party = ["argh_cli"]
+known_first_party = ["argh_pyd_cli"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["argh_cli"]
+known-first-party = ["argh_pyd_cli"]
