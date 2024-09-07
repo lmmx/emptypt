@@ -52,14 +52,18 @@ Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
 Laptop: GPD Win Max 2 2023 (3.3 GHz, max. 5.1 GHz)
 
-| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
-|:---------------------------|-----------------:|:------------------|:--------------------------:|
-| Stdlib [baseline]          |           0.020s | emptypt-m-minimum |             -              |
-| msgspec                    |           0.021s | emptypt-m-simple  |             -              |
-| msgspec + argh (docstring) |           0.109s | emptypt-m-argh    |            Yes             |
-| msgspec + click            |           0.124s | emptypt-m-click   |             -              |
-| msgspec + typer            |           0.411s | emptypt-m-typer   |             -              |
-| msgspec + defopt           |           0.234s | emptypt-m-defopt  |            Yes             |
+| Rank   |               Configuration | Execution Time   |      entrypoint       | Autogenerate from config   |
+|:-------|----------------------------:|:-----------------|:---------------------:|:---------------------------|
+| 1      |   Stdlib [baseline], simple | 0.020s           |    emptypt-simple     | -                          |
+| 2      |  Stdlib [baseline], minimum | 0.021s           |    emptypt-minimum    | -                          |
+| 3      |  msgspec + argh (docstring) | 0.093s           | emptypt-m-argh-docstr | Yes                        |
+| 4      |             msgspec + click | 0.120s           |    emptypt-m-click    | -                          |
+| 5      |              msgspec + argh | 0.126s           |    emptypt-m-argh     | Yes                        |
+| 6      | pydantic + argh (docstring) | 0.203s           | emptypt-p-argh-docstr | Yes                        |
+| 7      |            pydantic + click | 0.203s           |    emptypt-p-click    | -                          |
+| 8      |             pydantic + argh | 0.218s           |    emptypt-p-argh     | Yes                        |
+| 9      |            msgspec + defopt | 0.236s           |   emptypt-m-defopt    | Yes                        |
+| 10     |           pydantic + defopt | 0.263s           |   emptypt-p-defopt    | Yes                        |
 
 Laptop: Lenovo IdeaPad Flex 3 (1.1 GHz, max. 3.1 GHz)
 
