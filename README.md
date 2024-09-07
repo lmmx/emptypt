@@ -18,13 +18,18 @@ uv pip install .
 
 [uvws]: https://docs.astral.sh/uv/concepts/workspaces/
 
-## Ranking (speed relative to stdlib)
+## Rankings
+
+CLI latency relative to stdlib:
+
+- msgspec < Pydantic
+- argh < click < defopt < typer
 
 1. Standard library (1x)
 2. msgspec + argh (4x)
 3. msgspec + click (5x)
-4. Pydantic + argh (11x)
-5. msgspec + defopt (11x)
+4. msgspec + defopt (11x)
+5. Pydantic + argh (11x)
 6. Pydantic + click (13x)
 7. msgspec + typer (15x)
 8. Pydantic + defopt (18x)
@@ -53,16 +58,18 @@ Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
 | Rank   |               Configuration | Execution Time   |      entrypoint       | Autogenerate from config   |
 |:-------|----------------------------:|:-----------------|:---------------------:|:---------------------------|
-| 1      |   Stdlib [baseline], simple | 0.025s           |    emptypt-simple     | -                          |
-| 2      |  Stdlib [baseline], minimum | 0.026s           |    emptypt-minimum    | -                          |
-| 3      |  msgspec + argh (docstring) | 0.063s           | emptypt-m-argh-docstr | Yes                        |
-| 4      |              msgspec + argh | 0.082s           |    emptypt-m-argh     | Yes                        |
-| 5      |             msgspec + click | 0.082s           |    emptypt-m-click    | -                          |
-| 6      |            msgspec + defopt | 0.169s           |   emptypt-m-defopt    | Yes                        |
-| 7      |             pydantic + argh | 0.171s           |    emptypt-p-argh     | Yes                        |
-| 8      | pydantic + argh (docstring) | 0.171s           | emptypt-p-argh-docstr | Yes                        |
-| 9      |            pydantic + click | 0.200s           |    emptypt-p-click    | -                          |
-| 10     |           pydantic + defopt | 0.267s           |   emptypt-p-defopt    | Yes                        |
+| 1      |  Stdlib [baseline], minimum | 0.025s           |    emptypt-minimum    | -                          |
+| 2      |   Stdlib [baseline], simple | 0.027s           |    emptypt-simple     | -                          |
+| 3      |              msgspec + argh | 0.070s           |    emptypt-m-argh     | Yes                        |
+| 4      |  msgspec + argh (docstring) | 0.072s           | emptypt-m-argh-docstr | Yes                        |
+| 5      |             msgspec + click | 0.083s           |    emptypt-m-click    | -                          |
+| 6      |            msgspec + defopt | 0.171s           |   emptypt-m-defopt    | Yes                        |
+| 7      | pydantic + argh (docstring) | 0.175s           | emptypt-p-argh-docstr | Yes                        |
+| 8      |             pydantic + argh | 0.178s           |    emptypt-p-argh     | Yes                        |
+| 9      |            pydantic + click | 0.205s           |    emptypt-p-click    | -                          |
+| 10     |             msgspec + typer | 0.232s           |    emptypt-m-typer    | -                          |
+| 11     |           pydantic + defopt | 0.270s           |   emptypt-p-defopt    | Yes                        |
+| 12     |            pydantic + typer | 0.353s           |    emptypt-p-typer    | -                          |
 
 Laptop: GPD Win Max 2 2023 (3.3 GHz, max. 5.1 GHz)
 
