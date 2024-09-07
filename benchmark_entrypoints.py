@@ -21,10 +21,18 @@ def benchmark_entrypoints():
     configurations = [
         ("Stdlib [baseline]", "emptypt-m-minimum", False),
         ("msgspec", "emptypt-m-simple", False),
-        ("msgspec + argh (docstring)", "emptypt-m-argh", True),
+        ("msgspec + argh", "emptypt-m-argh", True),
+        ("msgspec + argh (docstring)", "emptypt-m-argh-docstr", True),
         ("msgspec + click", "emptypt-m-click", False),
         ("msgspec + typer", "emptypt-m-typer", False),
         ("msgspec + defopt", "emptypt-m-defopt", True),
+        ("Stdlib [baseline]", "emptypt-p-minimum", False),
+        ("pydantic", "emptypt-p-simple", False),
+        ("pydantic + argh", "emptypt-p-argh", True),
+        ("pydantic + argh (docstring)", "emptypt-p-argh-docstr", True),
+        ("pydantic + click", "emptypt-p-click", False),
+        ("pydantic + typer", "emptypt-p-typer", False),
+        ("pydantic + defopt", "emptypt-p-defopt", True),
     ]
 
     results = []
