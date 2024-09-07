@@ -40,7 +40,7 @@ wheels = [
 [[package]]
 name = "argh-ds-msg-cli"
 version = "0.1.0"
-source = { virtual = "packages/msgspec_packages/argh_ds_msg_cli" }
+source = { editable = "packages/msgspec_packages/argh_ds_msg_cli" }
 dependencies = [
     { name = "msgspec" },
 ]
@@ -51,7 +51,7 @@ requires-dist = [{ name = "msgspec", specifier = ">=0.18.5" }]
 [[package]]
 name = "argh-ds-pyd-cli"
 version = "0.1.0"
-source = { virtual = "packages/pydantic_packages/argh_ds_pyd_cli" }
+source = { editable = "packages/pydantic_packages/argh_ds_pyd_cli" }
 dependencies = [
     { name = "pydantic" },
 ]
@@ -62,7 +62,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.9.0" }]
 [[package]]
 name = "argh-msg-cli"
 version = "0.1.0"
-source = { virtual = "packages/msgspec_packages/argh_msg_cli" }
+source = { editable = "packages/msgspec_packages/argh_msg_cli" }
 dependencies = [
     { name = "argh" },
 ]
@@ -73,7 +73,7 @@ requires-dist = [{ name = "argh", specifier = ">=0.30.4" }]
 [[package]]
 name = "argh-pyd-cli"
 version = "0.1.0"
-source = { virtual = "packages/pydantic_packages/argh_pyd_cli" }
+source = { editable = "packages/pydantic_packages/argh_pyd_cli" }
 dependencies = [
     { name = "argh" },
     { name = "pydantic" },
@@ -100,7 +100,7 @@ wheels = [
 [[package]]
 name = "click-msg-cli"
 version = "0.1.0"
-source = { virtual = "packages/msgspec_packages/click_msg_cli" }
+source = { editable = "packages/msgspec_packages/click_msg_cli" }
 dependencies = [
     { name = "click" },
     { name = "msgspec" },
@@ -115,7 +115,7 @@ requires-dist = [
 [[package]]
 name = "click-pyd-cli"
 version = "0.1.0"
-source = { virtual = "packages/pydantic_packages/click_pyd_cli" }
+source = { editable = "packages/pydantic_packages/click_pyd_cli" }
 dependencies = [
     { name = "click" },
     { name = "pydantic" },
@@ -150,7 +150,7 @@ sdist = { url = "https://files.pythonhosted.org/packages/cc/3f/3baf4e6fed12dac76
 [[package]]
 name = "defopt-msg-cli"
 version = "0.1.0"
-source = { virtual = "packages/msgspec_packages/defopt_msg_cli" }
+source = { editable = "packages/msgspec_packages/defopt_msg_cli" }
 dependencies = [
     { name = "defopt" },
     { name = "msgspec" },
@@ -165,7 +165,7 @@ requires-dist = [
 [[package]]
 name = "defopt-pyd-cli"
 version = "0.1.0"
-source = { virtual = "packages/pydantic_packages/defopt_pyd_cli" }
+source = { editable = "packages/pydantic_packages/defopt_pyd_cli" }
 dependencies = [
     { name = "defopt" },
     { name = "pydantic" },
@@ -189,7 +189,7 @@ wheels = [
 [[package]]
 name = "emptypt"
 version = "0.1.0"
-source = { virtual = "packages/emptypt" }
+source = { editable = "packages/emptypt" }
 
 [[package]]
 name = "emptypt-ws"
@@ -208,24 +208,22 @@ dependencies = [
     { name = "simple-msg-cli" },
     { name = "simple-pyd-cli" },
     { name = "tabulate" },
-    { name = "typer-pyd-cli" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "argh-ds-msg-cli", virtual = "packages/msgspec_packages/argh_ds_msg_cli" },
-    { name = "argh-ds-pyd-cli", virtual = "packages/pydantic_packages/argh_ds_pyd_cli" },
-    { name = "argh-msg-cli", virtual = "packages/msgspec_packages/argh_msg_cli" },
-    { name = "argh-pyd-cli", virtual = "packages/pydantic_packages/argh_pyd_cli" },
-    { name = "click-msg-cli", virtual = "packages/msgspec_packages/click_msg_cli" },
-    { name = "click-pyd-cli", virtual = "packages/pydantic_packages/click_pyd_cli" },
-    { name = "defopt-msg-cli", virtual = "packages/msgspec_packages/defopt_msg_cli" },
-    { name = "defopt-pyd-cli", virtual = "packages/pydantic_packages/defopt_pyd_cli" },
-    { name = "emptypt", virtual = "packages/emptypt" },
-    { name = "simple-msg-cli", virtual = "packages/msgspec_packages/simple_msg_cli" },
-    { name = "simple-pyd-cli", virtual = "packages/pydantic_packages/simple_pyd_cli" },
+    { name = "argh-ds-msg-cli", editable = "packages/msgspec_packages/argh_ds_msg_cli" },
+    { name = "argh-ds-pyd-cli", editable = "packages/pydantic_packages/argh_ds_pyd_cli" },
+    { name = "argh-msg-cli", editable = "packages/msgspec_packages/argh_msg_cli" },
+    { name = "argh-pyd-cli", editable = "packages/pydantic_packages/argh_pyd_cli" },
+    { name = "click-msg-cli", editable = "packages/msgspec_packages/click_msg_cli" },
+    { name = "click-pyd-cli", editable = "packages/pydantic_packages/click_pyd_cli" },
+    { name = "defopt-msg-cli", editable = "packages/msgspec_packages/defopt_msg_cli" },
+    { name = "defopt-pyd-cli", editable = "packages/pydantic_packages/defopt_pyd_cli" },
+    { name = "emptypt", editable = "packages/emptypt" },
+    { name = "simple-msg-cli", editable = "packages/msgspec_packages/simple_msg_cli" },
+    { name = "simple-pyd-cli", editable = "packages/pydantic_packages/simple_pyd_cli" },
     { name = "tabulate", specifier = ">=0.9.0" },
-    { name = "typer-pyd-cli", virtual = "packages/pydantic_packages/typer_pyd_cli" },
 ]
 
 [[package]]
@@ -406,7 +404,7 @@ wheels = [
 [[package]]
 name = "simple-msg-cli"
 version = "0.1.0"
-source = { virtual = "packages/msgspec_packages/simple_msg_cli" }
+source = { editable = "packages/msgspec_packages/simple_msg_cli" }
 dependencies = [
     { name = "msgspec" },
 ]
@@ -417,7 +415,7 @@ requires-dist = [{ name = "msgspec", specifier = ">=0.18.5" }]
 [[package]]
 name = "simple-pyd-cli"
 version = "0.1.0"
-source = { virtual = "packages/pydantic_packages/simple_pyd_cli" }
+source = { editable = "packages/pydantic_packages/simple_pyd_cli" }
 dependencies = [
     { name = "pydantic" },
 ]
@@ -474,7 +472,7 @@ wheels = [
 [[package]]
 name = "typer-msg-cli"
 version = "0.1.0"
-source = { virtual = "packages/msgspec_packages/typer_msg_cli" }
+source = { editable = "packages/msgspec_packages/typer_msg_cli" }
 dependencies = [
     { name = "msgspec" },
     { name = "typer" },
@@ -489,7 +487,7 @@ requires-dist = [
 [[package]]
 name = "typer-pyd-cli"
 version = "0.1.0"
-source = { virtual = "packages/pydantic_packages/typer_pyd_cli" }
+source = { editable = "packages/pydantic_packages/typer_pyd_cli" }
 dependencies = [
     { name = "pydantic" },
     { name = "typer" },
