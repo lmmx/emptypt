@@ -13,8 +13,7 @@ members = [
     "defopt-pyd-cli",
     "emptypt",
     "emptypt-ws",
-    "simple-msg-cli",
-    "simple-pyd-cli",
+    "simple-cli",
     "typer-msg-cli",
     "typer-pyd-cli",
 ]
@@ -231,7 +230,7 @@ wheels = [
 [[package]]
 name = "emptypt"
 version = "0.1.0"
-source = { editable = "packages/emptypt" }
+source = { editable = "packages/baseline_packages/emptypt" }
 
 [[package]]
 name = "emptypt-ws"
@@ -247,9 +246,10 @@ dependencies = [
     { name = "defopt-msg-cli" },
     { name = "defopt-pyd-cli" },
     { name = "emptypt" },
-    { name = "simple-msg-cli" },
-    { name = "simple-pyd-cli" },
+    { name = "simple-cli" },
     { name = "tabulate" },
+    { name = "typer-msg-cli" },
+    { name = "typer-pyd-cli" },
 ]
 
 [package.dev-dependencies]
@@ -268,10 +268,11 @@ requires-dist = [
     { name = "click-pyd-cli", editable = "packages/pydantic_packages/click_pyd_cli" },
     { name = "defopt-msg-cli", editable = "packages/msgspec_packages/defopt_msg_cli" },
     { name = "defopt-pyd-cli", editable = "packages/pydantic_packages/defopt_pyd_cli" },
-    { name = "emptypt", editable = "packages/emptypt" },
-    { name = "simple-msg-cli", editable = "packages/msgspec_packages/simple_msg_cli" },
-    { name = "simple-pyd-cli", editable = "packages/pydantic_packages/simple_pyd_cli" },
+    { name = "emptypt", editable = "packages/baseline_packages/emptypt" },
+    { name = "simple-cli", editable = "packages/baseline_packages/simple_cli" },
     { name = "tabulate", specifier = ">=0.9.0" },
+    { name = "typer-msg-cli", editable = "packages/msgspec_packages/typer_msg_cli" },
+    { name = "typer-pyd-cli", editable = "packages/pydantic_packages/typer_pyd_cli" },
 ]
 
 [package.metadata.requires-dev]
@@ -564,26 +565,9 @@ wheels = [
 ]
 
 [[package]]
-name = "simple-msg-cli"
+name = "simple-cli"
 version = "0.1.0"
-source = { editable = "packages/msgspec_packages/simple_msg_cli" }
-dependencies = [
-    { name = "msgspec" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "msgspec", specifier = ">=0.18.5" }]
-
-[[package]]
-name = "simple-pyd-cli"
-version = "0.1.0"
-source = { editable = "packages/pydantic_packages/simple_pyd_cli" }
-dependencies = [
-    { name = "pydantic" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "pydantic", specifier = ">=2.9.0" }]
+source = { editable = "packages/baseline_packages/simple_cli" }
 
 [[package]]
 name = "six"

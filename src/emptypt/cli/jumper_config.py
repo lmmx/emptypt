@@ -1,5 +1,6 @@
 from msgspec import Struct, field
 
+
 class JumperConfig(Struct):
     """
     Configuration for the 'jumper' tool, used to refactor code by moving functions and class definitions between files.
@@ -11,6 +12,7 @@ class JumperConfig(Struct):
         element_name (str): The name of the function or class to be moved.
         overwrite (bool, optional): Whether to overwrite the destination file if it already exists. Defaults to False.
     """
+
     source_file: str
     destination_file: str
     element_type: str

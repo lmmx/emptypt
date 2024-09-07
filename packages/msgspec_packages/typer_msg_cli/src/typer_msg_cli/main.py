@@ -2,9 +2,8 @@ from sys import stderr
 from textwrap import indent
 
 import typer
-from msgspec import ValidationError
-
 from emptypt.action import foo
+from msgspec import ValidationError
 
 from .interface import ActionConfig
 
@@ -27,11 +26,12 @@ def handle_validation_error(ve: ValidationError) -> None:
     return
 
 
-@app.command()  # doesn't work?
+@app.command()
 def run_cli(debug: bool = False) -> None:
     try:
         config = ActionConfig(debug=debug)
     except ValidationError as ve:
         handle_validation_error(ve)
     else:
-        return foo(config)
+        print(foo(config))
+        return
