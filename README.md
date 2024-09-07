@@ -18,6 +18,18 @@ uv pip install .
 
 [uvws]: https://docs.astral.sh/uv/concepts/workspaces/
 
+## Ranking (speed relative to stdlib)
+
+1. Standard library (1x)
+2. msgspec + argh (4x)
+3. msgspec + click (5x)
+4. Pydantic + argh (11x)
+5. msgspec + defopt (11x)
+6. Pydantic + click (13x)
+7. msgspec + typer (15x)
+8. Pydantic + defopt (18x)
+9. Pydantic + typer (22x)
+
 ## Timing Benchmarks
 
 Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
@@ -25,15 +37,17 @@ Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
 | Rank   |               Configuration | Execution Time   |      entrypoint       | Autogenerate from config   |
 |:-------|----------------------------:|:-----------------|:---------------------:|:---------------------------|
 | 1      |  Stdlib [baseline], minimum | 0.015s           |    emptypt-minimum    | -                          |
-| 2      |   Stdlib [baseline], simple | 0.015s           |    emptypt-simple     | -                          |
-| 3      |  msgspec + argh (docstring) | 0.059s           | emptypt-m-argh-docstr | Yes                        |
-| 4      |              msgspec + argh | 0.060s           |    emptypt-m-argh     | Yes                        |
+| 2      |   Stdlib [baseline], simple | 0.016s           |    emptypt-simple     | -                          |
+| 3      |              msgspec + argh | 0.059s           |    emptypt-m-argh     | Yes                        |
+| 4      |  msgspec + argh (docstring) | 0.060s           | emptypt-m-argh-docstr | Yes                        |
 | 5      |             msgspec + click | 0.072s           |    emptypt-m-click    | -                          |
-| 6      |            msgspec + defopt | 0.152s           |   emptypt-m-defopt    | Yes                        |
-| 7      |             pydantic + argh | 0.168s           |    emptypt-p-argh     | Yes                        |
-| 8      | pydantic + argh (docstring) | 0.169s           | emptypt-p-argh-docstr | Yes                        |
-| 9      |            pydantic + click | 0.188s           |    emptypt-p-click    | -                          |
-| 10     |           pydantic + defopt | 0.249s           |   emptypt-p-defopt    | Yes                        |
+| 6      | pydantic + argh (docstring) | 0.166s           | emptypt-p-argh-docstr | Yes                        |
+| 7      |            msgspec + defopt | 0.167s           |   emptypt-m-defopt    | Yes                        |
+| 8      |             pydantic + argh | 0.169s           |    emptypt-p-argh     | Yes                        |
+| 9      |            pydantic + click | 0.192s           |    emptypt-p-click    | -                          |
+| 10     |             msgspec + typer | 0.225s           |    emptypt-m-typer    | -                          |
+| 11     |           pydantic + defopt | 0.266s           |   emptypt-p-defopt    | Yes                        |
+| 12     |            pydantic + typer | 0.330s           |    emptypt-p-typer    | -                          |
 
 Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
