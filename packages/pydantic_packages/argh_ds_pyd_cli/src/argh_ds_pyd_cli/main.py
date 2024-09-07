@@ -3,20 +3,20 @@ from __future__ import annotations
 from argparse import ArgumentParser
 from collections.abc import Callable
 from textwrap import dedent
-from typing import Annotated, get_args, get_origin, get_type_hints, TypeVar
+from typing import Annotated, TypeVar, get_args, get_origin, get_type_hints
 
 import argh
-from pydantic import BaseModel
-
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
 from emptypt.errors import EntryptMisconfigurationExit
+from pydantic import BaseModel
 
 from .interface import DocstringActionConfig
 
 __all__ = ("run_cli",)
 
 M = TypeVar("M", bound=BaseModel)
+
 
 def stringify_hint(type_hint) -> str:
     match type_hint:
@@ -50,7 +50,7 @@ def populate_parser_descriptions(parser: ArgumentParser, model: type[M]) -> None
     parser.description = parser_description
     for action in parser._actions:
         if (flag := action.dest) in model.model_fields:
-            field = model.model_fields[flag]
+            # field = model.model_fields[flag]
             if get_origin(hints[flag]) is Annotated:
                 type_hint = get_args(hints[flag])[0]
             else:

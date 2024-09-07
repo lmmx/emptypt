@@ -1,4 +1,5 @@
 import subprocess
+
 from inline_snapshot import snapshot
 
 
@@ -26,7 +27,7 @@ options:
   -u, --undocumented  (type: bool, default: False)\
 """,
             "",
-        )
+        ),
     )
 
 
@@ -50,7 +51,7 @@ options:
   -u, --undocumented  (type: bool, default: False)\
 """,
             "",
-        )
+        ),
     )
 
 
@@ -69,7 +70,7 @@ Options:
   -h, --help     Show this message and exit.\
 """,
             "",
-        )
+        ),
     )
 
 
@@ -94,7 +95,29 @@ options:
   -h, --help    show this help message and exit\
 """,
             "",
-        )
+        ),
+    )
+
+
+def test_emptypt_m_typer():
+    run_cli("emptypt-m-typer") == snapshot(("", "[]"))
+    run_cli("emptypt-m-typer", "--help") == snapshot(
+        (
+            """\
+Usage: emptypt-m-typer [OPTIONS]
+
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --debug                 --no-debug      [default: no-debug]                  │
+│ --install-completion                    Install completion for the current   │
+│                                         shell.                               │
+│ --show-completion                       Show completion for the current      │
+│                                         shell, to copy it or customize the   │
+│                                         installation.                        │
+│ --help                                  Show this message and exit.          │
+╰──────────────────────────────────────────────────────────────────────────────╯\
+""",
+            "",
+        ),
     )
 
 
@@ -127,7 +150,7 @@ options:
   -u, --undocumented  (type: bool, default: False)\
 """,
             "",
-        )
+        ),
     )
 
 
@@ -151,7 +174,7 @@ options:
   -u, --undocumented  (type: bool, default: False)\
 """,
             "",
-        )
+        ),
     )
 
 
@@ -170,7 +193,7 @@ Options:
   -h, --help     Show this message and exit.\
 """,
             "",
-        )
+        ),
     )
 
 
@@ -192,5 +215,27 @@ options:
   -u, --undocumented  (default: False)\
 """,
             "",
-        )
+        ),
+    )
+
+
+def test_emptypt_p_typer():
+    run_cli("emptypt-p-typer") == snapshot(("", "[]"))
+    run_cli("emptypt-p-typer", "--help") == snapshot(
+        (
+            """\
+Usage: emptypt-p-typer [OPTIONS]
+
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --debug                 --no-debug      [default: no-debug]                  │
+│ --install-completion                    Install completion for the current   │
+│                                         shell.                               │
+│ --show-completion                       Show completion for the current      │
+│                                         shell, to copy it or customize the   │
+│                                         installation.                        │
+│ --help                                  Show this message and exit.          │
+╰──────────────────────────────────────────────────────────────────────────────╯\
+""",
+            "",
+        ),
     )

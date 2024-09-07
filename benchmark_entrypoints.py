@@ -16,13 +16,13 @@ def run_command(command):
     end_time = time.time()
     return end_time - start_time
 
+
 def sort_and_rank_results(results):
     """Sort the results based on execution time and add rank column to each row."""
-    sorted_results = sorted(results, key=lambda x: float(x[1].rstrip('s')))
-    ranked_results = [
-        [i + 1] + result for i, result in enumerate(sorted_results)
-    ]
+    sorted_results = sorted(results, key=lambda x: float(x[1].rstrip("s")))
+    ranked_results = [[i + 1] + result for i, result in enumerate(sorted_results)]
     return ranked_results
+
 
 def benchmark_entrypoints():
     configurations = [
@@ -31,12 +31,12 @@ def benchmark_entrypoints():
         ("msgspec + argh", "emptypt-m-argh", True),
         ("msgspec + argh (docstring)", "emptypt-m-argh-docstr", True),
         ("msgspec + click", "emptypt-m-click", False),
-        # ("msgspec + typer", "emptypt-m-typer", False), # Broken
+        ("msgspec + typer", "emptypt-m-typer", False),
         ("msgspec + defopt", "emptypt-m-defopt", True),
         ("pydantic + argh", "emptypt-p-argh", True),
         ("pydantic + argh (docstring)", "emptypt-p-argh-docstr", True),
         ("pydantic + click", "emptypt-p-click", False),
-        # ("pydantic + typer", "emptypt-p-typer", False), # Broken
+        ("pydantic + typer", "emptypt-p-typer", False),
         ("pydantic + defopt", "emptypt-p-defopt", True),
     ]
 
@@ -50,7 +50,7 @@ def benchmark_entrypoints():
                 f"{execution_time:.3f}s",
                 entrypoint,
                 "Yes" if autogenerate else "-",
-            ]
+            ],
         )
 
     headers = [

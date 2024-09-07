@@ -17,17 +17,19 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-    "emptypt",
-    "tabulate>=0.9.0",
-    "argh-msg-cli",
     "argh-ds-msg-cli",
-    "click-msg-cli",
-    "defopt-msg-cli",
     "argh-ds-pyd-cli",
+    "argh-msg-cli",
     "argh-pyd-cli",
+    "click-msg-cli",
     "click-pyd-cli",
+    "defopt-msg-cli",
     "defopt-pyd-cli",
+    "emptypt",
     "simple-cli",
+    "tabulate>=0.9.0",
+    "typer-msg-cli",
+    "typer-pyd-cli",
 ]
 description = "Benchmarking Python package entrypoint latency."
 keywords = ["CLI", "benchmarking", "entrypoint", "latency"]
@@ -46,12 +48,12 @@ test = [
     "pytest>=7.4.0",
 ]
 
-[tool.ruff.lint.isort]
-lines-after-imports = 2
-
 [tool.ruff.lint]
 ignore = ["C408", "C901", "E501", "E741"]
 select = ["C", "E", "F", "I", "W"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
 
 [tool.tomlsort]
 all = true
@@ -66,22 +68,24 @@ dev-dependencies = [
     "pytest>=8.3.2",
 ]
 
+[tool.uv.sources]
+argh-ds-cli = {workspace = true}
+argh-ds-msg-cli = {workspace = true}
+argh-ds-pyd-cli = {workspace = true}
+argh-msg-cli = {workspace = true}
+argh-pyd-cli = {workspace = true}
+click-msg-cli = {workspace = true}
+click-pyd-cli = {workspace = true}
+defopt-msg-cli = {workspace = true}
+defopt-pyd-cli = {workspace = true}
+emptypt = {workspace = true}
+simple-cli = {workspace = true}
+typer-msg-cli = {workspace = true}
+typer-pyd-cli = {workspace = true}
+
 [tool.uv.workspace]
 members = [
     "packages/baseline_packages/*",
     "packages/msgspec_packages/*",
     "packages/pydantic_packages/*",
 ]
-
-[tool.uv.sources]
-emptypt = { workspace = true }
-simple-cli = { workspace = true }
-argh-msg-cli = { workspace = true }
-argh-ds-msg-cli = { workspace = true }
-click-msg-cli = { workspace = true }
-defopt-msg-cli = { workspace = true }
-argh-ds-cli = { workspace = true }
-argh-ds-pyd-cli = { workspace = true }
-argh-pyd-cli = { workspace = true }
-click-pyd-cli = { workspace = true }
-defopt-pyd-cli = { workspace = true }

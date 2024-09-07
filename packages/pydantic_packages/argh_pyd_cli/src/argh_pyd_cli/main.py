@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from argparse import ArgumentParser
 from collections.abc import Callable
-from typing import Annotated, get_args, get_origin, get_type_hints, TypeVar
+from typing import get_type_hints, TypeVar
 
 import argh
 from pydantic import BaseModel
@@ -16,6 +16,7 @@ from .interface import ActionConfig
 __all__ = ("run_cli",)
 
 M = TypeVar("M", bound=BaseModel)
+
 
 def stringify_hint(type_hint) -> str:
     match type_hint:
