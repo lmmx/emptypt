@@ -22,14 +22,18 @@ uv pip install .
 
 Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
 
-| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
-|:---------------------------|-----------------:|:------------------|:--------------------------:|
-| Stdlib [baseline]          |           0.014s | emptypt-m-minimum |             -              |
-| msgspec                    |           0.014s | emptypt-m-simple  |             -              |
-| msgspec + argh (docstring) |           0.054s | emptypt-m-argh    |            Yes             |
-| msgspec + click            |           0.067s | emptypt-m-click   |             -              |
-| msgspec + typer            |           0.088s | emptypt-m-typer   |             -              |
-| msgspec + defopt           |           0.162s | emptypt-m-defopt  |            Yes             |
+| Rank   |               Configuration | Execution Time   |      entrypoint       | Autogenerate from config   |
+|:-------|----------------------------:|:-----------------|:---------------------:|:---------------------------|
+| 1      |  Stdlib [baseline], minimum | 0.015s           |    emptypt-minimum    | -                          |
+| 2      |   Stdlib [baseline], simple | 0.015s           |    emptypt-simple     | -                          |
+| 3      |  msgspec + argh (docstring) | 0.059s           | emptypt-m-argh-docstr | Yes                        |
+| 4      |              msgspec + argh | 0.060s           |    emptypt-m-argh     | Yes                        |
+| 5      |             msgspec + click | 0.072s           |    emptypt-m-click    | -                          |
+| 6      |            msgspec + defopt | 0.152s           |   emptypt-m-defopt    | Yes                        |
+| 7      |             pydantic + argh | 0.168s           |    emptypt-p-argh     | Yes                        |
+| 8      | pydantic + argh (docstring) | 0.169s           | emptypt-p-argh-docstr | Yes                        |
+| 9      |            pydantic + click | 0.188s           |    emptypt-p-click    | -                          |
+| 10     |           pydantic + defopt | 0.249s           |   emptypt-p-defopt    | Yes                        |
 
 Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
