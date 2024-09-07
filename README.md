@@ -88,14 +88,20 @@ Laptop: GPD Win Max 2 2023 (3.3 GHz, max. 5.1 GHz)
 
 Laptop: Lenovo IdeaPad Flex 3 (1.1 GHz, max. 3.1 GHz)
 
-| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
-|:---------------------------|-----------------:|:------------------|:--------------------------:|
-| Stdlib [baseline]          |           0.036s | emptypt-m-minimum |             -              |
-| msgspec                    |           0.038s | emptypt-m-simple  |             -              |
-| msgspec + argh (docstring) |           0.147s | emptypt-m-argh    |            Yes             |
-| msgspec + click            |           0.183s | emptypt-m-click   |             -              |
-| msgspec + typer            |           0.242s | emptypt-m-typer   |             -              |
-| msgspec + defopt           |           0.454s | emptypt-m-defopt  |            Yes             |
+| Rank   |               Configuration | Execution Time   |      entrypoint       | Autogenerate from config   |
+|:-------|----------------------------:|:-----------------|:---------------------:|:---------------------------|
+| 1      |  Stdlib [baseline], minimum | 0.035s           |    emptypt-minimum    | -                          |
+| 2      |   Stdlib [baseline], simple | 0.036s           |    emptypt-simple     | -                          |
+| 3      |  msgspec + argh (docstring) | 0.148s           | emptypt-m-argh-docstr | Yes                        |
+| 4      |              msgspec + argh | 0.150s           |    emptypt-m-argh     | Yes                        |
+| 5      |             msgspec + click | 0.183s           |    emptypt-m-click    | -                          |
+| 6      |            msgspec + defopt | 0.425s           |   emptypt-m-defopt    | Yes                        |
+| 7      |             pydantic + argh | 0.435s           |    emptypt-p-argh     | Yes                        |
+| 8      | pydantic + argh (docstring) | 0.439s           | emptypt-p-argh-docstr | Yes                        |
+| 9      |            pydantic + click | 0.502s           |    emptypt-p-click    | -                          |
+| 10     |             msgspec + typer | 0.581s           |    emptypt-m-typer    | -                          |
+| 11     |           pydantic + defopt | 0.686s           |   emptypt-p-defopt    | Yes                        |
+| 12     |            pydantic + typer | 0.854s           |    emptypt-p-typer    | -                          |
 
 ## Details
 
