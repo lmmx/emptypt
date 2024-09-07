@@ -3,21 +3,19 @@ build-backend = "pdm.backend"
 requires = ["pdm-backend"]
 
 [project]
-dependencies = [
-    "msgspec>=0.18.5",
-]
+dependencies = []
 description = "Add your description here"
-name = "simple-msg-cli"
+name = "simple-cli"
 readme = "README.md"
 requires-python = ">=3.10, <3.12"
 version = "0.1.0"
 
 [project.scripts]
-emptypt-m-minimum = "simple_msg_cli.minimal_op:bar"
-emptypt-m-simple = "simple_msg_cli.action:foo"
+emptypt-minimum = "simple_cli.minimal_op:bar"
+emptypt-simple = "simple_cli.action:foo"
 
 [tool.lint.isort]
-known_first_party = ["simple_msg_cli"]
+known_first_party = ["simple_cli"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["simple_msg_cli"]
+known-first-party = ["simple_cli"]

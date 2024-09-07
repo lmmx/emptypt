@@ -16,22 +16,27 @@ def run_command(command):
     end_time = time.time()
     return end_time - start_time
 
+def sort_and_rank_results(results):
+    """Sort the results based on execution time and add rank column to each row."""
+    sorted_results = sorted(results, key=lambda x: float(x[1].rstrip('s')))
+    ranked_results = [
+        [i + 1] + result for i, result in enumerate(sorted_results)
+    ]
+    return ranked_results
 
 def benchmark_entrypoints():
     configurations = [
-        ("Stdlib [baseline]", "emptypt-m-minimum", False),
-        ("msgspec", "emptypt-m-simple", False),
+        ("Stdlib [baseline], minimum", "emptypt-minimum", False),
+        ("Stdlib [baseline], simple", "emptypt-simple", False),
         ("msgspec + argh", "emptypt-m-argh", True),
         ("msgspec + argh (docstring)", "emptypt-m-argh-docstr", True),
         ("msgspec + click", "emptypt-m-click", False),
-        ("msgspec + typer", "emptypt-m-typer", False),
+        # ("msgspec + typer", "emptypt-m-typer", False), # Broken
         ("msgspec + defopt", "emptypt-m-defopt", True),
-        ("Stdlib [baseline]", "emptypt-p-minimum", False),
-        ("pydantic", "emptypt-p-simple", False),
         ("pydantic + argh", "emptypt-p-argh", True),
         ("pydantic + argh (docstring)", "emptypt-p-argh-docstr", True),
         ("pydantic + click", "emptypt-p-click", False),
-        ("pydantic + typer", "emptypt-p-typer", False),
+        # ("pydantic + typer", "emptypt-p-typer", False), # Broken
         ("pydantic + defopt", "emptypt-p-defopt", True),
     ]
 
@@ -49,13 +54,14 @@ def benchmark_entrypoints():
         )
 
     headers = [
+        "Rank",
         "Configuration",
         "Execution Time",
         "entrypoint",
         "Autogenerate from config",
     ]
     table = tabulate(
-        results,
+        sort_and_rank_results(results),
         headers=headers,
         tablefmt="pipe",
         colalign=("left", "right", "left", "center"),

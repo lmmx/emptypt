@@ -98,14 +98,14 @@ options:
     )
 
 
-def test_emptypt_m_minimum():
-    run_cli("emptypt-m-minimum") == snapshot(("", "[]"))
-    run_cli("emptypt-m-minimum", "--help") == snapshot(("", "[]"))
+def test_emptypt_minimum():
+    run_cli("emptypt-minimum") == snapshot(("", "[]"))
+    run_cli("emptypt-minimum", "--help") == snapshot(("", "[]"))
 
 
-def test_emptypt_m_simple():
-    run_cli("emptypt-m-simple") == snapshot(("", "[]"))
-    run_cli("emptypt-m-simple", "--help") == snapshot(("", "[]"))
+def test_emptypt_simple():
+    run_cli("emptypt-simple") == snapshot(("", "[]"))
+    run_cli("emptypt-simple", "--help") == snapshot(("", "[]"))
 
 
 # Tests for emptypt-p-* CLIs
@@ -194,13 +194,3 @@ options:
             "",
         )
     )
-
-
-def test_emptypt_p_minimum():
-    run_cli("emptypt-p-minimum") == snapshot(("", "[]"))
-    run_cli("emptypt-p-minimum", "--help") == snapshot(("", "[]"))
-
-
-def test_emptypt_p_simple():
-    run_cli("emptypt-p-simple") == snapshot(("", "[]"))
-    run_cli("emptypt-p-simple", "--help") == snapshot(("", "[]"))
