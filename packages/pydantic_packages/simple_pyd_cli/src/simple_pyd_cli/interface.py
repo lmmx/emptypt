@@ -1,20 +1,15 @@
 from typing import Annotated
 
-from msgspec import Meta, Struct
+from pydantic import BaseModel, Field
 
 __all__ = ("ActionConfig",)
-
-
-def desc(typ, description: str):
-    """Annotate a `msgspec.Struct` field with a description"""
-    return Annotated[typ, Meta(description=description)]
 
 
 class ActionConfig(Struct):
     """Configure input filtering and output display."""
 
-    io_arg1: desc(bool, "Example IO flag") = False
-    filter_arg1: desc(bool, "Example filter flag") = False
-    quiet: desc(bool, "Run silently") = False
-    debug: desc(bool, "Run debug diagnostics") = False
+    io_arg1: bool = Field(False, description="Example IO flag")
+    filter_arg1: bool = Field(False, description="Example filter flag")
+    quiet: bool = Field(False, description="Run silently")
+    debug: bool = Field(False, description="Run debug diagnostics")
     undocumented: bool = False

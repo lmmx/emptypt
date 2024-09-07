@@ -5,7 +5,6 @@ from collections.abc import Callable
 from typing import Annotated, get_args, get_origin, get_type_hints
 
 import argh
-import msgspec
 
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
@@ -37,10 +36,10 @@ def populate_parser_descriptions(parser: ArgumentParser, struct: Callable) -> No
                 # If the type is unannotated no meta so no description
                 hint = stringify_hint(hints[flag])
                 desc = ""
-            match action.default:
-                case msgspec._core.Factory() as factory_manager:
-                    # The msgspec default factory didn't get instantiated by argh
-                    action.default = factory_manager.factory()
+            # match action.default:
+            #     case msgspec._core.Factory() as factory_manager:
+            #         # The msgspec default factory didn't get instantiated by argh
+            #         action.default = factory_manager.factory()
             action.help = f"{desc}(type: {hint}, default: {action.default})"
 
 

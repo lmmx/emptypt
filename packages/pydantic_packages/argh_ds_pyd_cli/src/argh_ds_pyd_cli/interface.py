@@ -1,11 +1,11 @@
 import typing
 
-from msgspec import Struct
+from pydantic import BaseModel
 
 __all__ = ("DocstringActionConfig",)
 
 
-class DocstringActionConfig(Struct):
+class DocstringActionConfig(BaseModel):
     """
     Configure input filtering and output display.
 
@@ -16,7 +16,7 @@ class DocstringActionConfig(Struct):
       :param debug: Run debug diagnostics
     """
 
-    io_arg1: typing.Annotated[bool, "foo"] = False
+    io_arg1: bool = False
     filter_arg1: bool = False
     quiet: bool = False
     debug: bool = False

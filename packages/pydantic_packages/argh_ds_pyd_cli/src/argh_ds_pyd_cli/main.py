@@ -3,10 +3,10 @@ from __future__ import annotations
 from argparse import ArgumentParser
 from collections.abc import Callable
 from textwrap import dedent
-from typing import Annotated, get_args, get_origin, get_type_hints
+from typing import Annotated, get_args, get_origin, get_type_hints, TypeVar
 
 import argh
-import msgspec
+from pydantic import BaseModel
 
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
@@ -16,6 +16,7 @@ from .interface import DocstringActionConfig
 
 __all__ = ("run_cli",)
 
+M = TypeVar("M", bound=BaseModel)
 
 def stringify_hint(type_hint) -> str:
     match type_hint:
@@ -43,21 +44,22 @@ def parse_docstring(doc: str) -> tuple[str, dict[str, str]]:
     return preamble, param_docs
 
 
-def populate_parser_descriptions(parser: ArgumentParser, struct: Callable) -> None:
-    hints = get_type_hints(struct, include_extras=True)
-    parser_description, parsed_ds = parse_docstring(struct.__doc__)
+def populate_parser_descriptions(parser: ArgumentParser, model: type[M]) -> None:
+    hints = get_type_hints(model, include_extras=True)
+    parser_description, parsed_ds = parse_docstring(model.__doc__)
     parser.description = parser_description
     for action in parser._actions:
-        if (flag := action.dest) in struct.__struct_fields__:
+        if (flag := action.dest) in model.model_fields:
+            field = model.model_fields[flag]
             if get_origin(hints[flag]) is Annotated:
                 type_hint = get_args(hints[flag])[0]
             else:
                 type_hint = hints[flag]
             hint = stringify_hint(type_hint)
-            match action.default:
-                case msgspec._core.Factory() as factory_manager:
-                    # The msgspec default factory didn't get instantiated by argh
-                    action.default = factory_manager.factory()
+            # match action.default:
+            #     case msgspec._core.Factory() as factory_manager:
+            #         # The msgspec default factory didn't get instantiated by argh
+            #         action.default = factory_manager.factory()
             desc: str | None = parsed_ds.get(flag)
             flag_meta = f"(type: {hint}, default: {action.default})"
             action.help = " ".join(filter(None, [desc, flag_meta]))

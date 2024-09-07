@@ -2,7 +2,7 @@ from sys import stderr
 from textwrap import indent
 
 import defopt
-from msgspec import ValidationError
+from pydantic import ValidationError
 
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
