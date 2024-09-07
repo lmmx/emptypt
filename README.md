@@ -33,14 +33,18 @@ Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
 
 Laptop: ThinkPad P14s (2.2 GHz, max. 5 GHz, 16 cores)
 
-| Configuration              |   Execution Time | entrypoint        |  Autogenerate from config  |
-|:---------------------------|-----------------:|:------------------|:--------------------------:|
-| Stdlib [baseline]          |           0.018s | emptypt-m-minimum |             -              |
-| msgspec                    |           0.018s | emptypt-m-simple  |             -              |
-| msgspec + argh (docstring) |           0.066s | emptypt-m-argh    |            Yes             |
-| msgspec + click            |           0.077s | emptypt-m-click   |             -              |
-| msgspec + typer            |           0.236s | emptypt-m-typer   |             -              |
-| msgspec + defopt           |           0.176s | emptypt-m-defopt  |            Yes             |
+| Rank   |               Configuration | Execution Time   |      entrypoint       | Autogenerate from config   |
+|:-------|----------------------------:|:-----------------|:---------------------:|:---------------------------|
+| 1      |   Stdlib [baseline], simple | 0.025s           |    emptypt-simple     | -                          |
+| 2      |  Stdlib [baseline], minimum | 0.026s           |    emptypt-minimum    | -                          |
+| 3      |  msgspec + argh (docstring) | 0.063s           | emptypt-m-argh-docstr | Yes                        |
+| 4      |              msgspec + argh | 0.082s           |    emptypt-m-argh     | Yes                        |
+| 5      |             msgspec + click | 0.082s           |    emptypt-m-click    | -                          |
+| 6      |            msgspec + defopt | 0.169s           |   emptypt-m-defopt    | Yes                        |
+| 7      |             pydantic + argh | 0.171s           |    emptypt-p-argh     | Yes                        |
+| 8      | pydantic + argh (docstring) | 0.171s           | emptypt-p-argh-docstr | Yes                        |
+| 9      |            pydantic + click | 0.200s           |    emptypt-p-click    | -                          |
+| 10     |           pydantic + defopt | 0.267s           |   emptypt-p-defopt    | Yes                        |
 
 Laptop: GPD Win Max 2 2023 (3.3 GHz, max. 5.1 GHz)
 
