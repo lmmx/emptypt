@@ -29,10 +29,10 @@ def stringify_hint(type_hint) -> str:
 def populate_parser_descriptions(parser: ArgumentParser, model: type[M]) -> None:
     hints = get_type_hints(model, include_extras=True)
     for action in parser._actions:
-        if (flag := action.dest) in model.model_fields:
-            field = model.model_fields[flag]
+        if (flag := action.dest) in model.__fields__:
+            field = model.__fields__[flag]
             hint = stringify_hint(hints[flag])
-            desc = (field.description or "") + " "
+            desc = (field.field_info.description or "") + " "
             action.help = f"{desc}(type: {hint}, default: {action.default})"
 
 

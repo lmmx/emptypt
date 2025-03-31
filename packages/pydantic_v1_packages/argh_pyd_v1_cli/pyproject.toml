@@ -1,0 +1,23 @@
+[build-system]
+build-backend = "pdm.backend"
+requires = ["pdm-backend"]
+
+[project]
+dependencies = [
+    "argh>=0.30.4",
+    "pydantic>=1.10.0,<2.0",
+]
+description = "Add your description here"
+name = "argh-pyd-v1-cli"
+readme = "README.md"
+requires-python = ">=3.10, <3.12"
+version = "0.1.0"
+
+[project.scripts]
+emptypt-p-v1-argh = "argh_pyd_v1_cli.main:run_cli"
+
+[tool.lint.isort]
+known_first_party = ["argh_pyd_v1_cli"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["argh_pyd_v1_cli"]
