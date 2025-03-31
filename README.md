@@ -35,6 +35,8 @@ CLI latency relative to stdlib:
 8. Pydantic + defopt (18x)
 9. Pydantic + typer (22x)
 
+Note: for specific Pydantic versions see `pydantic-version-benchmarks.md` (generated from `benchmark_pydantic_versions.py`)
+
 ## Timing Benchmarks
 
 Desktop (3.7 GHz, max. 5.3 GHz, 20 cores)
