@@ -1,56 +1,71 @@
-Benchmark 1: 2.1
-  Time (mean ± σ):     232.1 ms ±   1.8 ms    [User: 208.1 ms, System: 24.3 ms]
-  Range (min … max):   229.4 ms … 235.7 ms    12 runs
-
-Benchmark 2: 2.2
-  Time (mean ± σ):     232.1 ms ±   2.7 ms    [User: 209.1 ms, System: 22.7 ms]
-  Range (min … max):   227.3 ms … 238.3 ms    12 runs
-
-Benchmark 3: 2.3
-  Time (mean ± σ):     232.3 ms ±   1.7 ms    [User: 207.0 ms, System: 25.6 ms]
-  Range (min … max):   230.5 ms … 236.5 ms    12 runs
-
-Benchmark 4: 2.4
-  Time (mean ± σ):     270.8 ms ±   3.0 ms    [User: 245.7 ms, System: 25.1 ms]
-  Range (min … max):   263.6 ms … 274.7 ms    11 runs
-
-Benchmark 5: 2.5
-  Time (mean ± σ):     260.8 ms ±   1.7 ms    [User: 235.4 ms, System: 25.5 ms]
-  Range (min … max):   258.6 ms … 264.8 ms    11 runs
-
-Benchmark 6: 2.6
-  Time (mean ± σ):     260.9 ms ±   2.7 ms    [User: 238.5 ms, System: 22.1 ms]
-  Range (min … max):   256.7 ms … 265.9 ms    11 runs
-
-Benchmark 7: 2.7
-  Time (mean ± σ):     264.0 ms ±   3.0 ms    [User: 237.4 ms, System: 26.4 ms]
-  Range (min … max):   260.3 ms … 269.2 ms    11 runs
-
-Benchmark 8: 2.8
-  Time (mean ± σ):     265.7 ms ±   2.4 ms    [User: 241.5 ms, System: 24.6 ms]
-  Range (min … max):   262.1 ms … 270.4 ms    11 runs
-
-Benchmark 9: 2.9
-  Time (mean ± σ):     263.6 ms ±   2.1 ms    [User: 243.6 ms, System: 19.4 ms]
-  Range (min … max):   260.7 ms … 266.9 ms    11 runs
-
-Benchmark 10: 2.10
-  Time (mean ± σ):     277.7 ms ±   3.6 ms    [User: 250.7 ms, System: 26.5 ms]
-  Range (min … max):   271.9 ms … 282.9 ms    10 runs
-
-Benchmark 11: 2.11
-  Time (mean ± σ):     267.4 ms ±   1.8 ms    [User: 243.0 ms, System: 25.3 ms]
-  Range (min … max):   264.8 ms … 271.9 ms    11 runs
-
+Benchmark 1: 1.9
+  Time (mean ± σ):     157.4 ms ±   2.3 ms    [User: 141.9 ms, System: 15.3 ms]
+  Range (min … max):   154.0 ms … 162.2 ms    18 runs
+ 
+Benchmark 2: 1.10
+  Time (mean ± σ):     132.3 ms ±   2.2 ms    [User: 115.1 ms, System: 16.7 ms]
+  Range (min … max):   128.1 ms … 139.6 ms    22 runs
+ 
+Benchmark 3: 2.0
+  Time (mean ± σ):     222.5 ms ±   1.9 ms    [User: 198.0 ms, System: 24.9 ms]
+  Range (min … max):   219.2 ms … 226.6 ms    13 runs
+ 
+Benchmark 4: 2.1
+  Time (mean ± σ):     228.6 ms ±   2.2 ms    [User: 205.1 ms, System: 23.8 ms]
+  Range (min … max):   225.2 ms … 233.9 ms    13 runs
+ 
+Benchmark 5: 2.2
+  Time (mean ± σ):     230.7 ms ±   7.5 ms    [User: 205.7 ms, System: 25.2 ms]
+  Range (min … max):   225.7 ms … 253.3 ms    12 runs
+ 
+Benchmark 6: 2.3
+  Time (mean ± σ):     230.7 ms ±   3.7 ms    [User: 206.3 ms, System: 24.1 ms]
+  Range (min … max):   226.0 ms … 238.3 ms    13 runs
+ 
+Benchmark 7: 2.4
+  Time (mean ± σ):     264.7 ms ±   2.0 ms    [User: 239.0 ms, System: 26.2 ms]
+  Range (min … max):   261.4 ms … 269.2 ms    11 runs
+ 
+Benchmark 8: 2.5
+  Time (mean ± σ):     258.0 ms ±   2.6 ms    [User: 230.8 ms, System: 27.6 ms]
+  Range (min … max):   254.6 ms … 264.2 ms    11 runs
+ 
+Benchmark 9: 2.6
+  Time (mean ± σ):     257.1 ms ±   1.3 ms    [User: 232.4 ms, System: 25.0 ms]
+  Range (min … max):   255.4 ms … 259.9 ms    11 runs
+ 
+Benchmark 10: 2.7
+  Time (mean ± σ):     260.2 ms ±   3.6 ms    [User: 235.3 ms, System: 25.2 ms]
+  Range (min … max):   255.6 ms … 265.7 ms    11 runs
+ 
+Benchmark 11: 2.8
+  Time (mean ± σ):     262.9 ms ±   3.3 ms    [User: 237.4 ms, System: 25.1 ms]
+  Range (min … max):   258.0 ms … 267.3 ms    11 runs
+ 
+Benchmark 12: 2.9
+  Time (mean ± σ):     259.1 ms ±   2.1 ms    [User: 238.7 ms, System: 20.1 ms]
+  Range (min … max):   255.3 ms … 261.6 ms    11 runs
+ 
+Benchmark 13: 2.10
+  Time (mean ± σ):     275.1 ms ±   3.7 ms    [User: 250.7 ms, System: 24.6 ms]
+  Range (min … max):   270.4 ms … 281.9 ms    11 runs
+ 
+Benchmark 14: 2.11
+  Time (mean ± σ):     264.2 ms ±   4.0 ms    [User: 239.2 ms, System: 24.6 ms]
+  Range (min … max):   260.3 ms … 271.1 ms    11 runs
+ 
 Summary
-  2.2 ran
-    1.00 ± 0.01 times faster than 2.1
-    1.00 ± 0.01 times faster than 2.3
-    1.12 ± 0.02 times faster than 2.5
-    1.12 ± 0.02 times faster than 2.6
-    1.14 ± 0.02 times faster than 2.9
-    1.14 ± 0.02 times faster than 2.7
-    1.15 ± 0.02 times faster than 2.8
-    1.15 ± 0.02 times faster than 2.11
-    1.17 ± 0.02 times faster than 2.4
-    1.20 ± 0.02 times faster than 2.10
+  1.10 ran
+    1.19 ± 0.03 times faster than 1.9
+    1.68 ± 0.03 times faster than 2.0
+    1.73 ± 0.03 times faster than 2.1
+    1.74 ± 0.06 times faster than 2.2
+    1.74 ± 0.04 times faster than 2.3
+    1.94 ± 0.03 times faster than 2.6
+    1.95 ± 0.04 times faster than 2.5
+    1.96 ± 0.04 times faster than 2.9
+    1.97 ± 0.04 times faster than 2.7
+    1.99 ± 0.04 times faster than 2.8
+    2.00 ± 0.04 times faster than 2.11
+    2.00 ± 0.04 times faster than 2.4
+    2.08 ± 0.04 times faster than 2.10
