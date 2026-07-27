@@ -7,7 +7,6 @@ from typing import Annotated, get_args, get_origin, get_type_hints
 
 import argh
 import msgspec
-
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
 from emptypt.errors import EntryptMisconfigurationExit

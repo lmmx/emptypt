@@ -2,8 +2,8 @@ from typing import Literal
 
 __all__ = (
     "EntryptErrorCodes",
-    "EntryptUserError",
     "EntryptMisconfigurationExit",
+    "EntryptUserError",
 )
 
 ERROR_DOCS_URL = "https://entrypt.readthedocs.io/en/latest/reference/"

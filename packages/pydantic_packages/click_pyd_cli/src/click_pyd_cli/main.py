@@ -2,10 +2,9 @@ from sys import stderr
 from textwrap import indent
 
 import click
-from msgspec import ValidationError
-
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
+from msgspec import ValidationError
 
 from .interface import ActionConfig
 
@@ -23,7 +22,6 @@ def handle_validation_error(ve: ValidationError) -> None:
     error_msgs = "\n".join(msgs)
     msg = "Invalid command:\n" + indent(error_msgs, prefix="- ")
     print(msg, end="\n\n", file=stderr)
-    return
 
 
 @click.command(context_settings={"help_option_names": ["-h", "--help"]})
@@ -48,6 +46,6 @@ def run_cli(io_arg1, filter_arg1, quiet, debug) -> list:
         with CaptureInvalidConfigExit():
             print("(Failed)")
             raise NotImplementedError("TODO: make this show help text")
-            pass  # configure(argv=["-h"])
+            # configure(argv=["-h"])
     else:
         return foo(config)

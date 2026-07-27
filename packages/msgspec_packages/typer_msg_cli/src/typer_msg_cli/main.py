@@ -23,7 +23,6 @@ def handle_validation_error(ve: ValidationError) -> None:
     error_msgs = "\n".join(msgs)
     msg = "Invalid command:\n" + indent(error_msgs, prefix="- ")
     print(msg, end="\n\n", file=stderr)
-    return
 
 
 @app.command()
