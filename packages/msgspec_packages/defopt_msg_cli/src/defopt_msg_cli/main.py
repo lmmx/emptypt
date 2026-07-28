@@ -2,10 +2,9 @@ from sys import stderr
 from textwrap import indent
 
 import defopt
-from msgspec import ValidationError
-
 from emptypt.action import foo
 from emptypt.error_handlers import CaptureInvalidConfigExit
+from msgspec import ValidationError
 
 from .interface import ActionConfig
 
@@ -29,7 +28,6 @@ def handle_validation_error(ve: ValidationError) -> None:
     error_msgs = "\n".join(msgs)
     msg = "Invalid command:\n" + indent(error_msgs, prefix="- ")
     print(msg, end="\n\n", file=stderr)
-    return
 
 
 def run_cli() -> list:
