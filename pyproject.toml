@@ -4,16 +4,16 @@ requires = ["pdm-backend"]
 
 [project]
 authors = [
-    {email = "louismmx@gmail.com", name = "Louis Maddox"},
+    { email = "louismmx@gmail.com", name = "Louis Maddox" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python",
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
@@ -33,7 +33,7 @@ dependencies = [
 ]
 description = "Benchmarking Python package entrypoint latency."
 keywords = ["CLI", "benchmarking", "entrypoint", "latency"]
-license = {text = "MIT"}
+license = { text = "MIT" }
 name = "emptypt_ws"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
@@ -69,19 +69,19 @@ dev-dependencies = [
 ]
 
 [tool.uv.sources]
-argh-ds-cli = {workspace = true}
-argh-ds-msg-cli = {workspace = true}
-argh-ds-pyd-cli = {workspace = true}
-argh-msg-cli = {workspace = true}
-argh-pyd-cli = {workspace = true}
-click-msg-cli = {workspace = true}
-click-pyd-cli = {workspace = true}
-defopt-msg-cli = {workspace = true}
-defopt-pyd-cli = {workspace = true}
-emptypt = {workspace = true}
-simple-cli = {workspace = true}
-typer-msg-cli = {workspace = true}
-typer-pyd-cli = {workspace = true}
+argh-ds-cli = { workspace = true }
+argh-ds-msg-cli = { workspace = true }
+argh-ds-pyd-cli = { workspace = true }
+argh-msg-cli = { workspace = true }
+argh-pyd-cli = { workspace = true }
+click-msg-cli = { workspace = true }
+click-pyd-cli = { workspace = true }
+defopt-msg-cli = { workspace = true }
+defopt-pyd-cli = { workspace = true }
+emptypt = { workspace = true }
+simple-cli = { workspace = true }
+typer-msg-cli = { workspace = true }
+typer-pyd-cli = { workspace = true }
 
 [tool.uv.workspace]
 members = [
